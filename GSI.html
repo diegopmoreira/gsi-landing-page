@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubra como assumir o controle da sua saúde com o GSI da Dra. Yallana. Medicina integrativa, autonomia e conhecimento para uma vida mais saudável. Acesso vitalício por apenas R$ 147." />
+  <title>GSI - Guia da Saúde Integrada | Dra. Yallana | Medicina Integrativa</title>
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      /* Colors */
+      --bg: #ffffff;
+      --ink: #1a1a1a;
+      --muted: #6b7280;
+      --stroke: #e5e7eb;
+      --brand: #059669;
+      --brand-2: #10b981;
+      --accent: #dc2626;
+      --danger: #dc2626;
+      --soft: #f0fdf4;
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --info: #3b82f6;
+      
+      /* Spacing & Layout */
+      --radius: 12px;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      --max: 1200px;
+      
+      /* Typography */
+      --font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      --line-height: 1.65;
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-family);
+      line-height: var(--line-height);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    /* ===== LAYOUT COMPONENTS ===== */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section--soft {
+      background: var(--soft);
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), #b91c1c);
+      color: #fff;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(220, 38, 38, 0.4);
+      background: linear-gradient(135deg, #dc2626, #991b1b);
+    }
+
+    .btn--ghost {
+      background: #fff;
+      color: var(--brand);
+      border: 2px solid var(--brand);
+      box-shadow: 0 4px 15px rgba(5, 150, 105, 0.2);
+    }
+
+    .btn--ghost:hover {
+      background: var(--brand);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .btn--full {
+      width: 100%;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(120deg, #f8fbfb, #fff);
+      padding: 56px 0 32px;
+      border-bottom: 1px solid var(--stroke);
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .hero__content {
+      /* Content styles */
+    }
+
+    .hero__side {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero__frame {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--stroke);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .eyebrow {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .eyebrow--accent {
+      background: var(--accent);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin: 0.35rem 0 1rem;
+    }
+
+    .hero h1--gradient {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero .lead {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 56ch;
+    }
+
+    /* ===== CARD COMPONENTS ===== */
+    .card {
+      background: #fff;
+      border: 1px solid var(--stroke);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .card--interactive {
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .card--interactive:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    .card--problem {
+      background: linear-gradient(135deg, #fff, #fef2f2);
+      border: 3px solid #fecaca;
+      box-shadow: 0 15px 35px rgba(220, 38, 38, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card--problem:hover {
+      box-shadow: 0 20px 45px rgba(220, 38, 38, 0.25);
+    }
+
+    .card--benefit {
+      background: linear-gradient(135deg, #fff, #f0fdf4);
+      border: 3px solid #bbf7d0;
+      box-shadow: 0 15px 35px rgba(5, 150, 105, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card--benefit:hover {
+      box-shadow: 0 20px 45px rgba(5, 150, 105, 0.25);
+    }
+
+    .card--question {
+      background: linear-gradient(135deg, #fff, #fef7f0);
+      border: 3px solid #fed7aa;
+      box-shadow: 0 15px 35px rgba(251, 146, 60, 0.15);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card--question:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(251, 146, 60, 0.25);
+    }
+
+    /* ===== GRID SYSTEMS ===== */
+    .grid {
+      display: grid;
+      gap: 25px;
+    }
+
+    .grid--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid--auto {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .grid--benefits {
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ===== SPECIAL ELEMENTS ===== */
+    .badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 40px;
+      height: 40px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.2rem;
+    }
+
+    .badge--large {
+      top: -15px;
+      left: -15px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      font-size: 1.5rem;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+    }
+
+    .badge--question {
+      top: -10px;
+      right: -10px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      font-size: 1.3rem;
+      font-weight: 900;
+      box-shadow: 0 8px 20px rgba(251, 146, 60, 0.3);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .pulse {
+      animation: pulse 2s infinite;
+    }
+
+    /* ===== RESPONSIVE DESIGN ===== */
+    @media (max-width: 980px) {
+      .hero__grid,
+      .offer__grid,
+      .grid--3 {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero {
+        padding: 40px 0 24px;
+      }
+      
+      .hero__frame {
+        max-width: 300px;
+        aspect-ratio: 3/4;
+      }
+      
+      .grid--benefits,
+      .grid--auto {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+      }
+      
+      .hero h1 {
+        font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+      }
+      
+      .hero .lead {
+        font-size: 1.1rem !important;
+      }
+      
+      .hero__actions {
+        flex-direction: column;
+        gap: 12px;
+      }
+      
+      .hero__actions .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 15px;
+      }
+      
+      .hero {
+        padding: 30px 0 20px;
+      }
+      
+      .hero__frame {
+        max-width: 250px;
+        aspect-ratio: 3/4;
+      }
+      
+      .hero h1 {
+        font-size: clamp(1.6rem, 7vw, 2.2rem) !important;
+      }
+      
+      .hero .lead {
+        font-size: 1rem !important;
+      }
+      
+      .btn {
+        font-size: 1rem !important;
+        padding: 14px 24px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero__frame {
+        max-width: 200px;
+        aspect-ratio: 3/4;
+      }
+      
+      .hero h1 {
+        font-size: clamp(1.4rem, 8vw, 2rem) !important;
+      }
+      
+      .hero .lead {
+        font-size: 0.95rem !important;
+      }
+      
+      .btn {
+        font-size: 0.95rem !important;
+        padding: 12px 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__content">
+        <span class="eyebrow eyebrow--accent">⚡ Acesso Imediato • Sem Mensalidades</span>
+        <h1 class="hero h1--gradient">Assuma o Controle da Sua Saúde</h1>
+        <p class="lead">Descubra como <strong>milhares de pessoas</strong> já recuperaram sua energia natural, eliminaram dores crônicas e vivem com mais vitalidade — <strong>sem depender de remédios desnecessários</strong>.</p>
+        
+        <div class="card" style="background:var(--soft);border-left:4px solid var(--brand);margin-bottom:2rem">
+          <p style="margin:0;font-weight:600;color:var(--ink)">🎯 <strong>Estratégias práticas</strong> de medicina integrativa para sua autonomia</p>
+        </div>
+        
+        <div class="card" style="display:flex;align-items:center;gap:15px;margin-bottom:2rem;background:#fff;border:2px solid #e5e7eb;box-shadow:0 4px 15px rgba(0,0,0,0.1)">
+          <div style="display:flex;align-items:center;gap:8px">
+            <div class="pulse" style="width:12px;height:12px;background:var(--success);border-radius:50%"></div>
+            <span style="font-size:0.9rem;color:var(--ink);font-weight:600">+300 pessoas já transformaram sua saúde</span>
+          </div>
+        </div>
+        
+        <div class="hero__actions">
+          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4">🚀 QUERO COMEÇAR AGORA</a>
+          <a class="btn btn--ghost" href="#video">Ver vídeo</a>
+        </div>
+      </div>
+      
+      <div class="hero__side">
+        <div class="hero__frame">
+          <img src="images/dra-yallana.png" alt="Dra. Yallana — GSI" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VÍDEO ===== -->
+  <section class="video" id="video">
+    <div class="container">
+      <h2>Assista à apresentação</h2>
+      <div class="video__wrap">
+        <iframe src="https://www.youtube.com/embed/gYlLt_uhv1M" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROBLEMA/DOR ===== -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 1rem;color:var(--ink);font-size:2.5rem;font-weight:800">O QUE ESTÁ ACONTECENDO COM A SUA SAÚDE?</h2>
+      <div style="max-width:900px;margin:0 auto;text-align:center">
+        <p style="font-size:1.3rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6">Vivemos na era da medicina moderna. Nunca tivemos tanto acesso a exames, consultas e tratamentos.</p>
+        <p style="font-size:1.5rem;font-weight:800;color:var(--accent);margin-bottom:3rem;text-transform:uppercase;letter-spacing:1px">Mas por que ainda sentimos que algo está faltando?</p>
+        
+        <div class="grid grid--auto" style="margin:3rem 0">
+          <div class="card card--problem card--interactive">
+            <div class="badge">❌</div>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Você acorda cansado, mesmo dormindo bem?</p>
+          </div>
+          <div class="card card--problem card--interactive">
+            <div class="badge">❌</div>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Tenta se cuidar, mas o peso só aumenta?</p>
+          </div>
+          <div class="card card--problem card--interactive">
+            <div class="badge">❌</div>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Novos exames ruins aparecem a cada ano?</p>
+          </div>
+          <div class="card card--problem card--interactive">
+            <div class="badge">❌</div>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Médicos só oferecem mais remédios?</p>
+          </div>
+          <div class="card card--problem card--interactive">
+            <div class="badge">❌</div>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Já perdeu a esperança de ter energia de verdade?</p>
+          </div>
+          <div class="card card--problem card--interactive">
+            <div class="badge">❌</div>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Dores e inflamações sem explicação?</p>
+          </div>
+        </div>
+        
+        <div class="card" style="background:var(--brand);color:#fff;padding:30px;border-radius:16px;margin:2rem 0">
+          <h3 style="margin:0 0 1rem;font-size:1.5rem">A solução está no conhecimento.</h3>
+          <p style="margin:0;font-size:1.2rem;font-weight:600">E na sua autonomia para decidir.</p>
+        </div>
+        
+        <p style="font-size:1.3rem;font-weight:700;color:var(--brand);margin:2rem 0">A boa notícia? Existe uma abordagem integrativa que pode transformar sua saúde — e ela está aqui.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BENEFÍCIOS ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">O Que Você Vai Aprender no GSI</h2>
+      <p style="text-align:center;font-size:1.1rem;color:var(--muted);max-width:800px;margin:0 auto 3rem;line-height:1.6">O GSI é estruturado em 7 módulos, cada um focado em um pilar essencial para quem quer ter mais autonomia na saúde:</p>
+      
+      <div class="grid grid--benefits">
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">1</div>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Fundamentos da Nutrição</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Para você entender de verdade o que vai no seu prato, <strong>ganhar energia</strong> e <strong>fortalecer a imunidade</strong>.</p>
+        </div>
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">2</div>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Hidratação Inteligente</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Para ajustar funções vitais e até <strong>melhorar o humor</strong> com mudanças simples.</p>
+        </div>
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">3</div>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Sono & Saúde</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Para <strong>regular hormônios</strong>, descansar de forma profunda e acordar renovado(a).</p>
+        </div>
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">4</div>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Exercício Físico</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Nada de complicação: <strong>movimentos fáceis</strong> que se encaixam na rotina.</p>
+        </div>
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">5</div>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Comportamento Alimentar</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Aprenda a lidar com a ansiedade e <strong>ressignificar a relação</strong> com a comida.</p>
+        </div>
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">6</div>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Suplementação Essencial</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Saiba quais são <strong>úteis de fato</strong>, sem gastar dinheiro à toa em promessas vazias.</p>
+        </div>
+        <div class="card card--benefit card--interactive" style="grid-column:span 2;max-width:600px;margin:0 auto">
+          <div class="badge badge--large">7</div>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Leitura de Exames</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Entenda os principais marcadores de saúde e <strong>discuta com qualquer médico de igual para igual</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PERGUNTAS REFLEXIVAS ===== -->
+  <section class="section" style="background:linear-gradient(135deg,#f8fafc,#f1f5f9)">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 3rem;color:var(--ink);font-size:2.5rem;font-weight:800;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Se você me permite, pense nessas perguntas:</h2>
+      <div style="max-width:900px;margin:0 auto">
+        <div class="card card--question" style="margin-bottom:25px">
+          <div class="badge badge--question">❓</div>
+          <p style="margin:0;font-size:1.2rem;line-height:1.7;color:var(--ink);font-weight:600">Será que você sabe <strong>olhar seus exames</strong> para identificar se a sua baixa libido pode ter uma explicação hormonal ou <strong>carência nutricional</strong> bem ali na sua frente?</p>
+        </div>
+        <div class="card card--question" style="margin-bottom:25px">
+          <div class="badge badge--question">❓</div>
+          <p style="margin:0;font-size:1.2rem;line-height:1.7;color:var(--ink);font-weight:600">Será que consegue <strong>prever</strong>, a partir dos próprios indicadores de saúde, se existe um risco alto de desenvolver <strong>diabetes, trombose ou problemas cardíacos</strong> no futuro?</p>
+        </div>
+        <div class="card card--question" style="margin-bottom:40px">
+          <div class="badge badge--question">❓</div>
+          <p style="margin:0;font-size:1.2rem;line-height:1.7;color:var(--ink);font-weight:600">E será que compreende como <strong>alimentar o seu cérebro</strong> para protegê-lo contra doenças psiquiátricas que possam estar sendo disparadas por <strong>inflamações neurológicas</strong> que ninguém nunca lhe explicou?</p>
+        </div>
+        <div class="card" style="background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:40px;border-radius:20px;text-align:center;box-shadow:0 15px 35px rgba(5,150,105,0.25)">
+          <h3 style="margin:0 0 20px;font-size:1.6rem;font-weight:800;text-shadow:0 2px 4px rgba(0,0,0,0.2)">Se a resposta para qualquer uma dessas perguntas foi "não"</h3>
+          <p style="margin:0;font-size:1.3rem;font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,0.2)">então o GSI pode ser o passo que faltava para você realmente <strong>assumir o protagonismo</strong> da sua saúde.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOCIAL PROOF ===== -->
+  <section class="testimonials" style="padding:60px 0;background:var(--soft)">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">Veja o que os alunos estão dizendo sobre o GSI</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:20px;max-width:1200px;margin:0 auto">
+        <div style="background:#fff;padding:25px;border-radius:16px;border:1px solid var(--stroke);box-shadow:var(--shadow)">
+          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"Muito obrigado! De fato, é um curso bastante transformador, muitos profissionais de modo geral parecem que não entendem algumas leituras de exames, com o GSI consegui entender melhor meus exames."</p>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:40px;height:40px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">R</div>
+            <div>
+              <p style="margin:0;font-weight:600;color:var(--ink)">Reginaldo</p>
+              <p style="margin:0;font-size:0.9rem;color:var(--muted)">Aluno GSI</p>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:25px;border-radius:16px;border:1px solid var(--stroke);box-shadow:var(--shadow)">
+          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"Curso incrível, confio de olhos fechados!"</p>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:40px;height:40px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">A</div>
+            <div>
+              <p style="margin:0;font-weight:600;color:var(--ink)">Ana Paula</p>
+              <p style="margin:0;font-size:0.9rem;color:var(--muted)">Aluna GSI</p>
+            </div>
+          </div>
+        </div>
+        <div style="background:#fff;padding:25px;border-radius:16px;border:1px solid var(--stroke);box-shadow:var(--shadow)">
+          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"A vida inteira ninguém nunca me falou o que você diz nesse curso, eu to até achando engraçado o quanto são mudanças rápidas, baratas e fáceis que causam tamanho impacto!"</p>
+          <div style="display:flex;align-items:center;gap:10px">
+            <div style="width:40px;height:40px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">V</div>
+            <div>
+              <p style="margin:0;font-weight:600;color:var(--ink)">Veri</p>
+              <p style="margin:0;font-size:0.9rem;color:var(--muted)">Aluna GSI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:30px">
+        <p style="font-size:1.1rem;color:var(--muted);margin:0">Mais de <strong style="color:var(--brand)">300 pessoas</strong> já foram auxiliadas pelo conhecimento da Dra. Yallana</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CARROSSEL: MÓDULOS (usa as imagens que você enviou) ===== -->
+  <section class="carousel" id="modulos">
+    <div class="container">
+      <h2>Conheça os Módulos</h2>
+      <div class="track">
+        <!-- Substituirei os src pelos caminhos corretos quando você confirmar os nomes/locais dos arquivos -->
+        <div class="slide">
+          <img src="images/modulos/fundamentos.png" alt="Fundamentos da Nutrição" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Fundamentos da Nutrição</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/hidratacao.png" alt="Hidratação Inteligente" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Hidratação Inteligente</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/sono.png" alt="Sono & Saúde" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Sono & Saúde</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/exercicios.png" alt="Exercícios & Saúde" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Exercícios & Saúde</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/comportamento.png" alt="Comportamento Alimentar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Comportamento Alimentar</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/exames.png" alt="Leitura de Exames" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Leitura de Exames</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/suplementacao.png" alt="Suplementação Essencial" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Suplementação Essencial</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/bonus.png" alt="Bônus Extras" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Bônus Extras</div>
+        </div>
+        <div class="slide">
+          <img src="images/modulos/intro.png" alt="Introdução ao Guia" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+          <div class="fallback">Introdução ao Guia</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CARROSSEL: PDFs BÔNUS (caminhos confirmados) ===== -->
+  <section class="carousel" id="bonus">
+    <div class="container">
+      <h2>Bônus Exclusivos</h2>
+      <div class="track">
+        <div class="slide"><img src="images/bonus/testosterona.png" alt="Testosterona Natural"></div>
+        <div class="slide"><img src="images/bonus/foco-memoria.png" alt="Foco & Memória"></div>
+        <div class="slide"><img src="images/bonus/libido.png" alt="Libido"></div>
+        <div class="slide"><img src="images/bonus/alergias-imunidade.png" alt="Alergias & Imunidade"></div>
+        <div class="slide"><img src="images/bonus/figado-detox.png" alt="Fígado & Detox"></div>
+        <div class="slide"><img src="images/bonus/estresse-ansiedade.png" alt="Estresse & Ansiedade"></div>
+        <div class="slide"><img src="images/bonus/depressao.png" alt="Depressão"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BÔNUS EXTRAS ===== -->
+  <section style="padding:50px 0;background:#fff">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">Bônus Especiais Inclusos</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;max-width:1000px;margin:0 auto">
+        <div style="background:var(--soft);padding:25px;border-radius:16px;border:1px solid var(--stroke);text-align:center">
+          <div style="width:60px;height:60px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:#fff;font-size:1.5rem">🎥</div>
+          <h3 style="margin:0 0 10px;color:var(--ink)">Saúde Mental Integrativa</h3>
+          <p style="margin:0;color:var(--muted);line-height:1.5">Videoaula especial sobre abordagem integrativa da saúde mental</p>
+        </div>
+        <div style="background:var(--soft);padding:25px;border-radius:16px;border:1px solid var(--stroke);text-align:center">
+          <div style="width:60px;height:60px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:#fff;font-size:1.5rem">👩</div>
+          <h3 style="margin:0 0 10px;color:var(--ink)">Saúde Feminina</h3>
+          <p style="margin:0;color:var(--muted);line-height:1.5">Videoaula dedicada aos cuidados específicos da saúde da mulher</p>
+        </div>
+        <div style="background:var(--soft);padding:25px;border-radius:16px;border:1px solid var(--stroke);text-align:center">
+          <div style="width:60px;height:60px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:#fff;font-size:1.5rem">🤖</div>
+          <h3 style="margin:0 0 10px;color:var(--ink)">Assistente GSI</h3>
+          <p style="margin:0;color:var(--muted);line-height:1.5">IA personalizada para tirar suas dúvidas sobre saúde integrativa</p>
+          <small style="color:var(--muted);font-style:italic">(não substitui consulta médica)</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OFERTA ===== -->
+  <section class="offer" id="checkout">
+    <div class="container offer__grid">
+      <div class="pricebox" style="position:relative">
+        <div style="background:var(--brand);color:#fff;padding:8px 16px;border-radius:20px;font-size:0.8rem;font-weight:700;text-align:center;margin-bottom:20px;animation:pulse 2s infinite">
+          ⚡ OFERTA VÁLIDA ATÉ O FINAL DO MÊS ⚡
+        </div>
+        <span class="eyebrow">Programa completo • Acesso vitalício</span>
+        <h2>Entre para o GSI hoje</h2>
+        <p>Se cada módulo + materiais fosse vendido separadamente, passaria de <s style="color:var(--muted)">R$ 2.500</s>.</p>
+        <div style="text-align:center;margin:2rem 0">
+          <div style="display:inline-block;background:var(--accent);color:#fff;padding:8px 16px;border-radius:25px;font-size:0.9rem;font-weight:700;margin-bottom:1rem">
+            🔥 OFERTA ESPECIAL
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin:1rem 0">
+            <span style="color:var(--muted);font-size:1.2rem;text-decoration:line-through">R$ 497</span>
+            <div class="price" style="color:var(--accent);font-size:3.5rem;font-weight:900;margin:0">R$ 147</div>
+          </div>
+          <p style="margin:0;color:var(--muted);font-size:1.1rem">em até 12x no cartão • acesso vitalício</p>
+          <div style="background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:15px 25px;border-radius:30px;font-size:1rem;font-weight:700;text-align:center;margin:20px 0;display:inline-block;box-shadow:0 8px 20px rgba(5,150,105,0.3)">
+            💰 MENOS QUE UMA CONSULTA MÉDICA!
+          </div>
+        </div>
+        <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" style="width:100%;font-size:1.3rem;padding:20px;margin:20px 0">🚀 QUERO GARANTIR MINHA VAGA AGORA</a>
+        <p style="margin-top:15px"><strong>Garantia incondicional de 7 dias:</strong> ame o programa ou receba 100% do valor de volta.</p>
+        
+        <div style="background:linear-gradient(135deg,#fef3c7,#fde68a);padding:20px;border-radius:12px;margin-top:20px;border:2px solid #f59e0b;text-align:center;animation:pulse 2s infinite">
+          <p style="margin:0;font-size:1rem;color:#92400e;font-weight:700">⚠️ <strong>ÚLTIMAS VAGAS DISPONÍVEIS!</strong></p>
+          <p style="margin:5px 0 0;font-size:0.9rem;color:#92400e">Após o prazo, o valor volta ao preço normal de R$ 497</p>
+        </div>
+        
+        <div style="display:flex;align-items:center;justify-content:center;gap:15px;margin-top:20px;padding:15px;background:var(--soft);border-radius:12px">
+          <div style="display:flex;align-items:center;gap:8px">
+            <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
+            <span style="font-size:0.9rem;color:var(--ink);font-weight:600">+300 pessoas já se inscreveram</span>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="padding:30px">
+        <h3 style="color:var(--brand);margin-bottom:20px">Conheça a médica por trás do GSI</h3>
+        <h4 style="margin:0 0 15px;font-size:1.3rem">Quem é a Dra. Yallana?</h4>
+        <p style="margin-bottom:15px;line-height:1.6">Me chamo <strong>Yallana Arruda Moreira</strong>, sou médica há quase 10 anos e, por boa parte desse tempo, atuei como nutróloga. Sou movida pela certeza de que os pacientes merecem uma saúde mais autônoma — onde tenham conhecimento para tomar decisões informadas e assumam o protagonismo da própria saúde e da saúde de quem amam.</p>
+        
+        <div style="background:#fff;padding:15px;border-radius:8px;border:1px solid var(--stroke);margin:15px 0">
+          <h5 style="margin:0 0 10px;color:var(--brand)">Formação Acadêmica</h5>
+          <ul style="margin:0;padding-left:20px;color:var(--ink)">
+            <li><strong>Residência em Nutrologia pela USP</strong></li>
+            <li><strong>Residência em Clínica Médica</strong></li>
+            <li><strong>Pós-graduação em Medicina Integrativa</strong></li>
+          </ul>
+        </div>
+        
+        <div style="background:var(--soft);padding:20px;border-radius:12px;margin:20px 0">
+          <h5 style="margin:0 0 10px;color:var(--brand)">Por que criou o GSI?</h5>
+          <p style="margin:0;line-height:1.6">Apesar de toda a minha formação, eu mesma enfrentei dificuldades para encontrar um profissional que realmente olhasse para mim e para a minha família de forma integral. Isso ficou ainda mais evidente durante a minha gravidez, quando senti na pele o quanto é valioso ter uma abordagem completa e integrativa. Essa experiência me fez perceber o quanto podemos nos beneficiar de um cuidado que considere o ser humano como um todo.</p>
+        </div>
+        
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:20px 0">
+          <div style="text-align:center;padding:15px;background:#fff;border-radius:8px;border:1px solid var(--stroke)">
+            <p style="margin:0;font-size:1.5rem;font-weight:700;color:var(--brand)">10+</p>
+            <p style="margin:0;font-size:0.9rem;color:var(--muted)">Anos de experiência</p>
+          </div>
+          <div style="text-align:center;padding:15px;background:#fff;border-radius:8px;border:1px solid var(--stroke)">
+            <p style="margin:0;font-size:1.5rem;font-weight:700;color:var(--brand)">300+</p>
+            <p style="margin:0;font-size:0.9rem;color:var(--muted)">Pacientes auxiliados</p>
+          </div>
+          <div style="text-align:center;padding:15px;background:#fff;border-radius:8px;border:1px solid var(--stroke)">
+            <p style="margin:0;font-size:1.5rem;font-weight:700;color:var(--brand)">100%</p>
+            <p style="margin:0;font-size:0.9rem;color:var(--muted)">Abordagem integrativa</p>
+          </div>
+        </div>
+        
+        <p style="margin:0;font-style:italic;color:var(--muted);line-height:1.6">"Meu objetivo é empoderar pessoas para que sejam protagonistas da própria saúde, com conhecimento e autonomia para tomar as melhores decisões."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq" style="padding:60px 0;background:linear-gradient(135deg,#f8fafc,#f1f5f9)">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 3rem;color:var(--brand);font-size:2.5rem;font-weight:800">Dúvidas Frequentes</h2>
+      <div style="max-width:800px;margin:0 auto">
+        <details open style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">💸 Não tenho dinheiro para investir</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Pense em quantas vezes você pagou consultas que não trouxeram soluções definitivas, ou quantos remédios já comprou que só tapavam o sol com a peneira. O GSI é um investimento que previne problemas futuros, economizando tempo, dinheiro e sofrimento lá na frente.</p>
+        </details>
+        
+        <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">🧠 Não vou entender nada, não sou da área da saúde</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">O material é didático e criado para quem está começando do zero. São aulas objetivas, com checklists e materiais de apoio que mostram o que fazer, como fazer e por que fazer.</p>
+        </details>
+        
+        <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">⏰ Minha rotina é muito apertada, quase não tenho tempo</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Por isso mesmo o GSI foi pensado para ser flexível. As aulas são on-line, ficam gravadas, e você consegue aplicar pequenas mudanças no dia a dia, sem revoluções impossíveis de manter.</p>
+        </details>
+        
+        <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">👨‍⚕️ Então vou largar meu médico?</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">De jeito nenhum. Você ganha informação para dialogar melhor, inclusive para questionar se as condutas dele(a) realmente fazem sentido e estão atualizadas. É sobre você deixar de ser um paciente passivo e se tornar alguém que participa das decisões sobre o próprio corpo.</p>
+        </details>
+        
+        <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">🛡️ E se eu não gostar do curso?</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem"><strong>Garantia incondicional de 7 dias!</strong> Se por qualquer motivo você não ficar satisfeito(a) com o GSI, devolvemos 100% do seu dinheiro, sem perguntas. É nossa forma de garantir que você tenha total confiança no investimento.</p>
+        </details>
+        
+        <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">📱 Como funciona o acesso ao conteúdo?</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Você recebe acesso imediato a uma plataforma exclusiva onde pode assistir às aulas, baixar os materiais e acessar os bônus. O conteúdo fica disponível para sempre, sem mensalidades ou taxas adicionais.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Guia da Saúde Integrada — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
