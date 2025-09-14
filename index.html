@@ -6,6 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Descubra como assumir o controle da sua saúde com o GSI da Dra. Yallana. Medicina integrativa, autonomia e conhecimento para uma vida mais saudável. Acesso vitalício por apenas R$ 147." />
   <title>GSI - Guia da Saúde Integrada | Dra. Yallana | Medicina Integrativa</title>
+  
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // ID do pixel do Facebook configurado
+    fbq('init', '1237597614008554');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1237597614008554&ev=PageView&noscript=1" />
+  </noscript>
+  <!-- End Facebook Pixel Code -->
   <style>
     /* ===== CSS VARIABLES ===== */
     :root {
@@ -736,11 +757,11 @@
         </div>
         
         <div class="hero__actions" style="position:relative">
-          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" style="position:relative;overflow:hidden;font-size:1.2rem;padding:18px 40px;box-shadow:0 12px 35px rgba(220,38,38,0.4);transform:scale(1.02)">
+          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});" style="position:relative;overflow:hidden;font-size:1.2rem;padding:18px 40px;box-shadow:0 12px 35px rgba(220,38,38,0.4);transform:scale(1.02)">
             <span style="position:relative;z-index:2">🚀 QUERO TRANSFORMAR MINHA SAÚDE AGORA</span>
             <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
           </a>
-          <a class="btn btn--ghost" href="#video" style="font-size:1.1rem;padding:16px 32px;border:2px solid var(--brand);position:relative;overflow:hidden">
+          <a class="btn btn--ghost" href="#video" onclick="fbq('track', 'ViewContent', {content_name: 'Vídeo Apresentação GSI', content_category: 'Saúde Integrativa'});" style="font-size:1.1rem;padding:16px 32px;border:2px solid var(--brand);position:relative;overflow:hidden">
             <span style="position:relative;z-index:2">▶️ Ver Apresentação Gratuita</span>
           </a>
         </div>
@@ -762,7 +783,7 @@
   </section>
 
   <!-- ===== VÍDEO ===== -->
-  <section class="video" id="video">
+  <section class="video" id="video" data-section="Vídeo Apresentação">
     <div class="container">
       <h2>Assista à apresentação</h2>
       <div class="video__wrap">
@@ -817,7 +838,7 @@
   </section>
 
   <!-- ===== BENEFÍCIOS ===== -->
-  <section class="section">
+  <section class="section" data-section="Benefícios e Módulos">
     <div class="container">
       <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">O Que Você Vai Aprender no GSI</h2>
       <p style="text-align:center;font-size:1.1rem;color:var(--muted);max-width:800px;margin:0 auto 3rem;line-height:1.6">O GSI é estruturado em 7 módulos, cada um focado em um pilar essencial para quem quer ter mais autonomia na saúde:</p>
@@ -1020,7 +1041,7 @@
   </section>
 
   <!-- ===== OFERTA ===== -->
-  <section class="offer" id="checkout">
+  <section class="offer" id="checkout" data-section="Seção de Oferta">
     <div class="container offer__grid">
       <div class="pricebox" style="position:relative">
         <div style="background:linear-gradient(135deg,var(--accent),#b91c1c);color:#fff;padding:12px 20px;border-radius:25px;font-size:0.9rem;font-weight:800;text-align:center;margin-bottom:20px;animation:pulse 2s infinite;box-shadow:0 6px 20px rgba(220,38,38,0.3);position:relative;overflow:hidden">
@@ -1050,7 +1071,7 @@
             <span style="position:relative;z-index:2">💰 MENOS QUE UMA CONSULTA MÉDICA!</span>
           </div>
         </div>
-        <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" style="width:100%;font-size:1.4rem;padding:25px;margin:25px 0;position:relative;overflow:hidden;box-shadow:0 15px 40px rgba(220,38,38,0.4);transform:scale(1.02)">
+        <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="fbq('track', 'Purchase', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});" style="width:100%;font-size:1.4rem;padding:25px;margin:25px 0;position:relative;overflow:hidden;box-shadow:0 15px 40px rgba(220,38,38,0.4);transform:scale(1.02)">
           <span style="position:relative;z-index:2">🚀 SIM! QUERO TRANSFORMAR MINHA SAÚDE AGORA</span>
           <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:shimmer 3s infinite"></div>
         </a>
@@ -1122,7 +1143,7 @@
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq" style="padding:60px 0;background:linear-gradient(135deg,#f8fafc,#f1f5f9)">
+  <section class="faq" id="faq" data-section="FAQ e Dúvidas" style="padding:60px 0;background:linear-gradient(135deg,#f8fafc,#f1f5f9)">
     <div class="container">
       <h2 style="text-align:center;margin:0 0 3rem;color:var(--brand);font-size:2.5rem;font-weight:800">Dúvidas Frequentes</h2>
       <div style="max-width:800px;margin:0 auto">
@@ -1165,17 +1186,106 @@
     </div>
   </footer>
   <script>
+    // ===== FACEBOOK PIXEL EVENTS =====
+    // Função para rastrear visualização de seções
+    function trackSectionView(sectionName) {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'ViewContent', {
+          content_name: sectionName,
+          content_category: 'GSI - Seções da Página',
+          content_type: 'section',
+          source: 'landing_page'
+        });
+      }
+    }
+
+    // Função para rastrear engajamento
+    function trackEngagement(action, details) {
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'CustomizeProduct', {
+          content_name: action,
+          content_category: 'GSI - Engajamento',
+          content_type: 'interaction',
+          custom_data: details
+        });
+      }
+    }
+
+    // Função para rastrear tempo na página
+    function trackTimeOnPage() {
+      if (typeof fbq !== 'undefined') {
+        const timeSpent = Math.round((Date.now() - window.pageLoadTime) / 1000);
+        fbq('track', 'CustomizeProduct', {
+          content_name: 'Tempo na Página',
+          content_category: 'GSI - Engajamento',
+          content_type: 'time_tracking',
+          custom_data: { time_seconds: timeSpent }
+        });
+      }
+    }
+
+    // Função para rastrear scroll depth
+    function trackScrollDepth() {
+      if (typeof fbq !== 'undefined') {
+        const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        fbq('track', 'CustomizeProduct', {
+          content_name: 'Scroll Depth',
+          content_category: 'GSI - Engajamento',
+          content_type: 'scroll_tracking',
+          custom_data: { scroll_percent: scrollPercent }
+        });
+      }
+    }
+
+    // Observer para rastrear visualização de seções
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const sectionName = entry.target.getAttribute('data-section');
+          if (sectionName) {
+            trackSectionView(sectionName);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
     // ===== SLIDER FUNCTIONALITY =====
     let currentSlide = {};
     
     // Initialize sliders
     document.addEventListener('DOMContentLoaded', function() {
+      // Marcar tempo de carregamento da página
+      window.pageLoadTime = Date.now();
+      
       // Initialize each carousel
       const carousels = document.querySelectorAll('.carousel');
       carousels.forEach(carousel => {
         const id = carousel.id;
         currentSlide[id] = 0;
         updateCarousel(id);
+      });
+
+      // Configurar observer para seções
+      const sections = document.querySelectorAll('[data-section]');
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+
+      // Rastrear tempo na página a cada 30 segundos
+      setInterval(trackTimeOnPage, 30000);
+      
+      // Rastrear scroll depth
+      let scrollDepthTracked = {};
+      window.addEventListener('scroll', function() {
+        const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+        const milestones = [25, 50, 75, 90];
+        
+        milestones.forEach(milestone => {
+          if (scrollPercent >= milestone && !scrollDepthTracked[milestone]) {
+            scrollDepthTracked[milestone] = true;
+            trackScrollDepth();
+          }
+        });
       });
     });
 
@@ -1191,6 +1301,15 @@
         currentSlide[carouselId] = 0;
       } else if (currentSlide[carouselId] > maxSlide) {
         currentSlide[carouselId] = maxSlide;
+      }
+      
+      // Rastrear interação com carrossel
+      if (typeof fbq !== 'undefined') {
+        fbq('track', 'CustomizeProduct', {
+          content_name: `Carrossel ${carouselId} - Navegação`,
+          content_category: 'GSI - Engajamento',
+          custom_data: { direction: direction > 0 ? 'next' : 'prev', slide: currentSlide[carouselId] }
+        });
       }
       
       updateCarousel(carouselId);
