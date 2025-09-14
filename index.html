@@ -114,9 +114,21 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(120deg, #f8fbfb, #fff);
-      padding: 56px 0 32px;
+      background: linear-gradient(135deg, #f8fbfb, #fff, #f0fdf4);
+      padding: 60px 0 40px;
       border-bottom: 1px solid var(--stroke);
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 80%, rgba(5, 150, 105, 0.05) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+      pointer-events: none;
     }
 
     .hero__grid {
@@ -126,9 +138,6 @@
       align-items: center;
     }
 
-    .hero__content {
-      /* Content styles */
-    }
 
     .hero__side {
       display: flex;
@@ -204,6 +213,7 @@
 
     .card--interactive:hover {
       transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     }
 
     .card--problem {
@@ -212,6 +222,7 @@
       box-shadow: 0 15px 35px rgba(220, 38, 38, 0.15);
       position: relative;
       overflow: hidden;
+      padding: 25px 60px 25px 25px;
     }
 
     .card--problem:hover {
@@ -238,6 +249,7 @@
       cursor: pointer;
       position: relative;
       overflow: hidden;
+      padding: 25px 60px 25px 25px;
     }
 
     .card--question:hover {
@@ -264,7 +276,7 @@
     }
 
     .grid--benefits {
-      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       max-width: 1300px;
       margin: 0 auto;
     }
@@ -272,39 +284,48 @@
     /* ===== SPECIAL ELEMENTS ===== */
     .badge {
       position: absolute;
-      top: -10px;
-      right: -10px;
-      width: 40px;
-      height: 40px;
+      top: 15px;
+      right: 15px;
+      width: 35px;
+      height: 35px;
       background: var(--accent);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      font-size: 1.2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
     }
 
     .badge--large {
-      top: -15px;
-      left: -15px;
-      width: 60px;
-      height: 60px;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 45px;
+      height: 45px;
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 900;
-      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.3);
+      box-shadow: 0 6px 18px rgba(5, 150, 105, 0.25);
+      z-index: 2;
+    }
+
+    .card--benefit {
+      padding: 30px 25px 25px 80px;
+      position: relative;
     }
 
     .badge--question {
-      top: -10px;
-      right: -10px;
-      width: 50px;
-      height: 50px;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
       background: linear-gradient(135deg, #f97316, #ea580c);
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 900;
-      box-shadow: 0 8px 20px rgba(251, 146, 60, 0.3);
+      box-shadow: 0 4px 14px rgba(251, 146, 60, 0.25);
     }
 
     /* ===== ANIMATIONS ===== */
@@ -313,8 +334,51 @@
       50% { transform: scale(1.05); }
     }
 
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+
+    @keyframes move {
+      0% { background-position: 0 0; }
+      100% { background-position: 20px 20px; }
+    }
+
     .pulse {
       animation: pulse 2s infinite;
+    }
+
+    /* ===== VIDEO SECTION ===== */
+    .video {
+      padding: 60px 0;
+      background: #fff;
+    }
+    
+    .video h2 {
+      text-align: center;
+      margin: 0 0 2rem;
+      color: var(--brand);
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    
+    .video__wrap {
+      max-width: 60%;
+      margin: 0 auto;
+      position: relative;
+      padding-bottom: 33.75%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+    }
+    
+    .video__wrap iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 
     /* ===== RESPONSIVE DESIGN ===== */
@@ -337,7 +401,18 @@
       .grid--benefits,
       .grid--auto {
         grid-template-columns: 1fr !important;
-        gap: 20px;
+        gap: 25px;
+        margin: 0 10px;
+      }
+      
+      .card--benefit[style*="grid-column:span 2"] {
+        grid-column: span 1 !important;
+        max-width: none !important;
+        margin: 0 !important;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr !important;
       }
       
       .hero h1 {
@@ -356,6 +431,22 @@
       .hero__actions .btn {
         width: 100%;
         text-align: center;
+        font-size: 1.1rem !important;
+        padding: 16px 24px !important;
+      }
+      
+      .video__wrap {
+        max-width: 90%;
+      }
+      
+      .price {
+        font-size: 3rem !important;
+      }
+      
+      .card--benefit[style*="grid-column:span 2"] {
+        grid-column: span 1 !important;
+        max-width: none !important;
+        margin: 0 !important;
       }
     }
 
@@ -381,9 +472,65 @@
         font-size: 1rem !important;
       }
       
+      .card--benefit {
+        padding: 25px 20px 20px 70px;
+      }
+      
+      .badge--large {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        top: 15px;
+        left: 15px;
+      }
+      
+      .badge {
+        width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+        top: 12px;
+        right: 12px;
+      }
+      
+      .card--problem {
+        padding: 20px 50px 20px 20px;
+      }
+      
+      .card--question {
+        padding: 20px 50px 20px 20px;
+      }
+      
+      .badge--question {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        top: 15px;
+        right: 15px;
+      }
+      
       .btn {
         font-size: 1rem !important;
         padding: 14px 24px !important;
+      }
+      
+      .video__wrap {
+        max-width: 95%;
+      }
+      
+      .video h2 {
+        font-size: 1.5rem;
+      }
+      
+      .price {
+        font-size: 2.5rem !important;
+      }
+      
+      .hero h1 {
+        font-size: clamp(1.8rem, 6vw, 2.2rem) !important;
+      }
+      
+      .hero .lead {
+        font-size: 1rem !important;
       }
     }
 
@@ -406,6 +553,144 @@
         padding: 12px 20px !important;
       }
     }
+    /* ===== SLIDER/CARROSSEL ===== */
+    .carousel {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+      overflow: hidden;
+    }
+
+    .carousel .container {
+      position: relative;
+    }
+
+    .carousel h2 {
+      text-align: center;
+      margin: 0 0 3rem;
+      color: var(--brand);
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(5, 150, 105, 0.1);
+    }
+
+    .track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.5s ease;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slide {
+      flex: 0 0 280px;
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(5, 150, 105, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .slide:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(5, 150, 105, 0.2);
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+
+    /* Botões de navegação */
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--brand);
+      color: white;
+      border: none;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
+      transition: all 0.3s ease;
+      z-index: 10;
+    }
+
+    .carousel-nav:hover {
+      background: var(--brand-2);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .carousel-nav.prev {
+      left: -25px;
+    }
+
+    .carousel-nav.next {
+      right: -25px;
+    }
+
+    /* Indicadores */
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 2rem;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(5, 150, 105, 0.3);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .indicator.active {
+      background: var(--brand);
+    }
+
+    /* Responsividade do slider */
+    @media (max-width: 768px) {
+      .carousel h2 {
+        font-size: 2rem;
+      }
+      
+      .slide {
+        flex: 0 0 250px;
+      }
+      
+      .slide img {
+        height: auto;
+      }
+      
+      .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+      
+      .carousel-nav.prev {
+        left: -20px;
+      }
+      
+      .carousel-nav.next {
+        right: -20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -413,24 +698,57 @@
   <section class="hero">
     <div class="container hero__grid">
       <div class="hero__content">
-        <span class="eyebrow eyebrow--accent">⚡ Acesso Imediato • Sem Mensalidades</span>
-        <h1 class="hero h1--gradient">Assuma o Controle da Sua Saúde</h1>
-        <p class="lead">Descubra como <strong>milhares de pessoas</strong> já recuperaram sua energia natural, eliminaram dores crônicas e vivem com mais vitalidade — <strong>sem depender de remédios desnecessários</strong>.</p>
-        
-        <div class="card" style="background:var(--soft);border-left:4px solid var(--brand);margin-bottom:2rem">
-          <p style="margin:0;font-weight:600;color:var(--ink)">🎯 <strong>Estratégias práticas</strong> de medicina integrativa para sua autonomia</p>
+        <div style="display:flex;align-items:center;gap:15px;margin-bottom:1rem;flex-wrap:wrap">
+          <span class="eyebrow eyebrow--accent">⚡ Acesso Imediato • 1 Ano de Acesso</span>
+          <div style="display:flex;align-items:center;gap:8px;background:#fff;padding:6px 12px;border-radius:20px;border:1px solid var(--brand);box-shadow:0 2px 8px rgba(5,150,105,0.1)">
+            <div style="width:8px;height:8px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
+            <span style="font-size:0.8rem;color:var(--brand);font-weight:600">+300 pessoas transformadas</span>
+          </div>
         </div>
+        <h1 style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:clamp(2.2rem,4.5vw,3.5rem);line-height:1.1;margin:0.5rem 0 1.5rem;font-weight:900;text-shadow:0 4px 8px rgba(5,150,105,0.1)">Transforme Sua Saúde <span style="color:var(--accent)">Definitivamente</span></h1>
+        <p class="lead" style="font-size:1.2rem;color:var(--muted);max-width:55ch;margin-bottom:2rem;line-height:1.6">Descubra o <strong style="color:var(--brand)">método comprovado</strong> que já ajudou <strong style="color:var(--accent)">+300 pessoas</strong> a recuperarem energia, eliminarem dores crônicas e viverem com vitalidade — <strong>sem depender de remédios desnecessários</strong>.</p>
         
-        <div class="card" style="display:flex;align-items:center;gap:15px;margin-bottom:2rem;background:#fff;border:2px solid #e5e7eb;box-shadow:0 4px 15px rgba(0,0,0,0.1)">
-          <div style="display:flex;align-items:center;gap:8px">
-            <div class="pulse" style="width:12px;height:12px;background:var(--success);border-radius:50%"></div>
-            <span style="font-size:0.9rem;color:var(--ink);font-weight:600">+300 pessoas já transformaram sua saúde</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;margin-bottom:2rem">
+          <div class="card" style="background:linear-gradient(135deg,var(--soft),#f0fdf4);border-left:4px solid var(--brand);padding:20px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:-10px;right:-10px;width:40px;height:40px;background:var(--brand);border-radius:50%;opacity:0.1"></div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1rem">🎯 <strong style="color:var(--brand)">Estratégias práticas</strong> de medicina integrativa</p>
+          </div>
+          <div class="card" style="background:linear-gradient(135deg,#fff,#fef7f0);border-left:4px solid #f97316;padding:20px;position:relative;overflow:hidden">
+            <div style="position:absolute;top:-10px;right:-10px;width:40px;height:40px;background:#f97316;border-radius:50%;opacity:0.1"></div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1rem">⚡ <strong style="color:#f97316">Resultados comprovados</strong> com método científico</p>
           </div>
         </div>
         
-        <div class="hero__actions">
-          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4">🚀 QUERO COMEÇAR AGORA</a>
-          <a class="btn btn--ghost" href="#video">Ver vídeo</a>
+        <div style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#fff,#f8fafc);padding:20px;border-radius:16px;border:2px solid var(--stroke);box-shadow:0 8px 25px rgba(0,0,0,0.08);margin-bottom:2rem;flex-wrap:wrap;gap:15px">
+          <div style="display:flex;align-items:center;gap:12px">
+            <div style="display:flex;gap:5px">
+              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
+              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite;animation-delay:0.5s"></div>
+              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite;animation-delay:1s"></div>
+            </div>
+            <span style="font-size:1rem;color:var(--ink);font-weight:700">+300 pessoas já transformaram sua saúde</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:8px 16px;border-radius:20px;font-size:0.9rem;font-weight:600">
+            <span>🏆</span>
+            <span>Médica Certificada USP</span>
+          </div>
+        </div>
+        
+        <div class="hero__actions" style="position:relative">
+          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" style="position:relative;overflow:hidden;font-size:1.2rem;padding:18px 40px;box-shadow:0 12px 35px rgba(220,38,38,0.4);transform:scale(1.02)">
+            <span style="position:relative;z-index:2">🚀 QUERO TRANSFORMAR MINHA SAÚDE AGORA</span>
+            <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
+          </a>
+          <a class="btn btn--ghost" href="#video" style="font-size:1.1rem;padding:16px 32px;border:2px solid var(--brand);position:relative;overflow:hidden">
+            <span style="position:relative;z-index:2">▶️ Ver Apresentação Gratuita</span>
+          </a>
+        </div>
+        
+        <div style="text-align:center;margin-top:20px">
+          <p style="margin:0;font-size:0.9rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px">
+            <span>🔒</span>
+            <span>Compra 100% segura • Garantia de 7 dias</span>
+          </p>
         </div>
       </div>
       
@@ -455,35 +773,35 @@
   <!-- ===== PROBLEMA/DOR ===== -->
   <section class="section section--soft">
     <div class="container">
-      <h2 style="text-align:center;margin:0 0 1rem;color:var(--ink);font-size:2.5rem;font-weight:800">O QUE ESTÁ ACONTECENDO COM A SUA SAÚDE?</h2>
+      <h2 style="text-align:center;margin:0 0 1rem;color:var(--ink);font-size:2.8rem;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Você Se Reconhece Nesta Situação?</h2>
       <div style="max-width:900px;margin:0 auto;text-align:center">
-        <p style="font-size:1.3rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6">Vivemos na era da medicina moderna. Nunca tivemos tanto acesso a exames, consultas e tratamentos.</p>
-        <p style="font-size:1.5rem;font-weight:800;color:var(--accent);margin-bottom:3rem;text-transform:uppercase;letter-spacing:1px">Mas por que ainda sentimos que algo está faltando?</p>
+        <p style="font-size:1.4rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6">Apesar de toda a tecnologia médica disponível, <strong style="color:var(--accent)">você ainda se sente perdido</strong> quando o assunto é sua própria saúde.</p>
+        <p style="font-size:1.6rem;font-weight:800;color:var(--accent);margin-bottom:3rem;text-transform:uppercase;letter-spacing:1px;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Por que a medicina tradicional não está funcionando?</p>
         
         <div class="grid grid--auto" style="margin:3rem 0">
           <div class="card card--problem card--interactive">
             <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Você acorda cansado, mesmo dormindo bem?</p>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Acorda exausto mesmo após 8 horas de sono?</p>
           </div>
           <div class="card card--problem card--interactive">
             <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Tenta se cuidar, mas o peso só aumenta?</p>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Faz dieta mas o peso não sai do lugar?</p>
           </div>
           <div class="card card--problem card--interactive">
             <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Novos exames ruins aparecem a cada ano?</p>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Exames pioram a cada consulta médica?</p>
           </div>
           <div class="card card--problem card--interactive">
             <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Médicos só oferecem mais remédios?</p>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Recebe apenas mais remédios como "solução"?</p>
           </div>
           <div class="card card--problem card--interactive">
             <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Já perdeu a esperança de ter energia de verdade?</p>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Perdeu a esperança de ter energia real?</p>
           </div>
           <div class="card card--problem card--interactive">
             <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Dores e inflamações sem explicação?</p>
+            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Dores misteriosas que ninguém explica?</p>
           </div>
         </div>
         
@@ -610,48 +928,51 @@
     </div>
   </section>
 
-  <!-- ===== CARROSSEL: MÓDULOS (usa as imagens que você enviou) ===== -->
+  <!-- ===== SLIDER: MÓDULOS ===== -->
   <section class="carousel" id="modulos">
     <div class="container">
       <h2>Conheça os Módulos</h2>
-      <div class="track">
-        <!-- Substituirei os src pelos caminhos corretos quando você confirmar os nomes/locais dos arquivos -->
+      <button class="carousel-nav prev" onclick="moveSlide('modulos', -1)">‹</button>
+      <button class="carousel-nav next" onclick="moveSlide('modulos', 1)">›</button>
+      <div class="track" id="track-modulos">
         <div class="slide">
-          <img src="images/modulos/fundamentos.png" alt="Fundamentos da Nutrição" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Fundamentos da Nutrição</div>
+          <img src="images/modulos/fundamentos.png" alt="Fundamentos da Nutrição">
         </div>
         <div class="slide">
-          <img src="images/modulos/hidratacao.png" alt="Hidratação Inteligente" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Hidratação Inteligente</div>
+          <img src="images/modulos/hidratacao.png" alt="Hidratação Inteligente">
         </div>
         <div class="slide">
-          <img src="images/modulos/sono.png" alt="Sono & Saúde" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Sono & Saúde</div>
+          <img src="images/modulos/sono.png" alt="Sono & Saúde">
         </div>
         <div class="slide">
-          <img src="images/modulos/exercicios.png" alt="Exercícios & Saúde" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Exercícios & Saúde</div>
+          <img src="images/modulos/exercicios.png" alt="Exercícios & Saúde">
         </div>
         <div class="slide">
-          <img src="images/modulos/comportamento.png" alt="Comportamento Alimentar" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Comportamento Alimentar</div>
+          <img src="images/modulos/comportamento.png" alt="Comportamento Alimentar">
         </div>
         <div class="slide">
-          <img src="images/modulos/exames.png" alt="Leitura de Exames" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Leitura de Exames</div>
+          <img src="images/modulos/exames.png" alt="Leitura de Exames">
         </div>
         <div class="slide">
-          <img src="images/modulos/suplementacao.png" alt="Suplementação Essencial" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Suplementação Essencial</div>
+          <img src="images/modulos/suplementacao.png" alt="Suplementação Essencial">
         </div>
         <div class="slide">
-          <img src="images/modulos/bonus.png" alt="Bônus Extras" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Bônus Extras</div>
+          <img src="images/modulos/bonus.png" alt="Bônus Extras">
         </div>
         <div class="slide">
-          <img src="images/modulos/intro.png" alt="Introdução ao Guia" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
-          <div class="fallback">Introdução ao Guia</div>
+          <img src="images/modulos/intro.png" alt="Introdução ao Guia">
         </div>
+      </div>
+      <div class="carousel-indicators" id="indicators-modulos">
+        <span class="indicator active" onclick="goToSlide('modulos', 0)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 1)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 2)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 3)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 4)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 5)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 6)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 7)"></span>
+        <span class="indicator" onclick="goToSlide('modulos', 8)"></span>
       </div>
     </div>
   </section>
@@ -701,37 +1022,62 @@
   <section class="offer" id="checkout">
     <div class="container offer__grid">
       <div class="pricebox" style="position:relative">
-        <div style="background:var(--brand);color:#fff;padding:8px 16px;border-radius:20px;font-size:0.8rem;font-weight:700;text-align:center;margin-bottom:20px;animation:pulse 2s infinite">
-          ⚡ OFERTA VÁLIDA ATÉ O FINAL DO MÊS ⚡
+        <div style="background:linear-gradient(135deg,var(--accent),#b91c1c);color:#fff;padding:12px 20px;border-radius:25px;font-size:0.9rem;font-weight:800;text-align:center;margin-bottom:20px;animation:pulse 2s infinite;box-shadow:0 6px 20px rgba(220,38,38,0.3);position:relative;overflow:hidden">
+          <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
+          <span style="position:relative;z-index:2">🔥 ÚLTIMAS HORAS - OFERTA ESPECIAL 🔥</span>
         </div>
-        <span class="eyebrow">Programa completo • Acesso vitalício</span>
-        <h2>Entre para o GSI hoje</h2>
-        <p>Se cada módulo + materiais fosse vendido separadamente, passaria de <s style="color:var(--muted)">R$ 2.500</s>.</p>
-        <div style="text-align:center;margin:2rem 0">
-          <div style="display:inline-block;background:var(--accent);color:#fff;padding:8px 16px;border-radius:25px;font-size:0.9rem;font-weight:700;margin-bottom:1rem">
-            🔥 OFERTA ESPECIAL
+        <span class="eyebrow" style="font-size:1rem;color:var(--brand);font-weight:700">Programa Completo • 1 Ano de Acesso • Garantia Total</span>
+        <h2 style="font-size:2.2rem;font-weight:900;color:var(--ink);margin:1rem 0;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Garanta Sua Transformação Hoje</h2>
+        <p style="font-size:1.1rem;color:var(--muted);margin-bottom:1.5rem">Se cada módulo fosse vendido separadamente, custaria <s style="color:var(--muted);font-size:1.2rem">R$ 2.500</s>. <strong style="color:var(--accent)">Hoje você paga apenas uma fração!</strong></p>
+        <div style="text-align:center;margin:2rem 0;position:relative">
+          <div style="display:inline-block;background:linear-gradient(135deg,var(--accent),#b91c1c);color:#fff;padding:12px 24px;border-radius:30px;font-size:1rem;font-weight:800;margin-bottom:1.5rem;box-shadow:0 8px 25px rgba(220,38,38,0.3);animation:pulse 2s infinite">
+            🚨 OFERTA RELÂMPAGO 🚨
           </div>
-          <div style="display:flex;align-items:baseline;justify-content:center;gap:10px;margin:1rem 0">
-            <span style="color:var(--muted);font-size:1.2rem;text-decoration:line-through">R$ 497</span>
-            <div class="price" style="color:var(--accent);font-size:3.5rem;font-weight:900;margin:0">R$ 147</div>
+          <div style="display:flex;align-items:baseline;justify-content:center;gap:15px;margin:1.5rem 0;position:relative">
+            <div style="position:relative">
+              <span style="color:var(--muted);font-size:1.4rem;text-decoration:line-through;font-weight:600">R$ 497</span>
+              <div style="position:absolute;top:50%;left:0;right:0;height:3px;background:var(--accent);transform:translateY(-50%)"></div>
+            </div>
+            <div class="price" style="color:var(--accent);font-size:4rem;font-weight:900;margin:0;text-shadow:0 4px 8px rgba(220,38,38,0.2);position:relative">
+              R$ 147
+              <div style="position:absolute;top:-10px;right:-20px;background:var(--accent);color:#fff;padding:4px 8px;border-radius:12px;font-size:0.7rem;font-weight:800;transform:rotate(15deg)">-70%</div>
+            </div>
           </div>
-          <p style="margin:0;color:var(--muted);font-size:1.1rem">em até 12x no cartão • acesso vitalício</p>
-          <div style="background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:15px 25px;border-radius:30px;font-size:1rem;font-weight:700;text-align:center;margin:20px 0;display:inline-block;box-shadow:0 8px 20px rgba(5,150,105,0.3)">
-            💰 MENOS QUE UMA CONSULTA MÉDICA!
+          <p style="margin:0;color:var(--muted);font-size:1.2rem;font-weight:600">em até 12x de <strong style="color:var(--brand)">R$ 12,25</strong> • 1 ano de acesso</p>
+          <div style="background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:20px 30px;border-radius:35px;font-size:1.1rem;font-weight:800;text-align:center;margin:25px 0;display:inline-block;box-shadow:0 12px 30px rgba(5,150,105,0.4);position:relative;overflow:hidden">
+            <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
+            <span style="position:relative;z-index:2">💰 MENOS QUE UMA CONSULTA MÉDICA!</span>
           </div>
         </div>
-        <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" style="width:100%;font-size:1.3rem;padding:20px;margin:20px 0">🚀 QUERO GARANTIR MINHA VAGA AGORA</a>
-        <p style="margin-top:15px"><strong>Garantia incondicional de 7 dias:</strong> ame o programa ou receba 100% do valor de volta.</p>
+        <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" style="width:100%;font-size:1.4rem;padding:25px;margin:25px 0;position:relative;overflow:hidden;box-shadow:0 15px 40px rgba(220,38,38,0.4);transform:scale(1.02)">
+          <span style="position:relative;z-index:2">🚀 SIM! QUERO TRANSFORMAR MINHA SAÚDE AGORA</span>
+          <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:shimmer 3s infinite"></div>
+        </a>
+        <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);padding:20px;border-radius:16px;margin:20px 0;border:2px solid var(--brand);text-align:center">
+          <p style="margin:0;font-size:1.1rem;color:var(--brand);font-weight:700">🛡️ <strong>Garantia Incondicional de 7 Dias</strong></p>
+          <p style="margin:5px 0 0;font-size:1rem;color:var(--ink)">Se não ficar 100% satisfeito, devolvemos seu dinheiro sem perguntas</p>
+        </div>
         
-        <div style="background:linear-gradient(135deg,#fef3c7,#fde68a);padding:20px;border-radius:12px;margin-top:20px;border:2px solid #f59e0b;text-align:center;animation:pulse 2s infinite">
-          <p style="margin:0;font-size:1rem;color:#92400e;font-weight:700">⚠️ <strong>ÚLTIMAS VAGAS DISPONÍVEIS!</strong></p>
-          <p style="margin:5px 0 0;font-size:0.9rem;color:#92400e">Após o prazo, o valor volta ao preço normal de R$ 497</p>
+        <div style="background:linear-gradient(135deg,#fef3c7,#fde68a);padding:25px;border-radius:16px;margin-top:25px;border:3px solid #f59e0b;text-align:center;animation:pulse 2s infinite;position:relative;overflow:hidden">
+          <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(45deg,transparent 25%,rgba(255,255,255,0.1) 25%,rgba(255,255,255,0.1) 50%,transparent 50%,transparent 75%,rgba(255,255,255,0.1) 75%);background-size:20px 20px;animation:move 1s linear infinite"></div>
+          <p style="margin:0;font-size:1.1rem;color:#92400e;font-weight:800;position:relative;z-index:2">⚠️ <strong>OFERTA POR TEMPO LIMITADO!</strong></p>
+          <p style="margin:8px 0 0;font-size:1rem;color:#92400e;position:relative;z-index:2">Após o prazo, o valor volta para R$ 497</p>
         </div>
         
-        <div style="display:flex;align-items:center;justify-content:center;gap:15px;margin-top:20px;padding:15px;background:var(--soft);border-radius:12px">
-          <div style="display:flex;align-items:center;gap:8px">
-            <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
-            <span style="font-size:0.9rem;color:var(--ink);font-weight:600">+300 pessoas já se inscreveram</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:25px">
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:var(--soft);border-radius:12px;border:1px solid var(--brand)">
+            <div style="display:flex;align-items:center;gap:8px">
+              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
+              <span style="font-size:0.9rem;color:var(--ink);font-weight:600">+300 transformadas</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#fef3c7;border-radius:12px;border:1px solid #f59e0b">
+            <span style="font-size:1.2rem">⚡</span>
+            <span style="font-size:0.9rem;color:#92400e;font-weight:600">Acesso Imediato</span>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#f0fdf4;border-radius:12px;border:1px solid var(--brand)">
+            <span style="font-size:1.2rem">🛡️</span>
+            <span style="font-size:0.9rem;color:var(--brand);font-weight:600">Garantia Total</span>
           </div>
         </div>
       </div>
@@ -817,5 +1163,115 @@
       <p>&copy; 2025 Guia da Saúde Integrada — Todos os direitos reservados.</p>
     </div>
   </footer>
+  <script>
+    // ===== SLIDER FUNCTIONALITY =====
+    let currentSlide = {};
+    
+    // Initialize sliders
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize each carousel
+      const carousels = document.querySelectorAll('.carousel');
+      carousels.forEach(carousel => {
+        const id = carousel.id;
+        currentSlide[id] = 0;
+        updateCarousel(id);
+      });
+    });
+
+    function moveSlide(carouselId, direction) {
+      const track = document.getElementById(`track-${carouselId}`);
+      const slides = track.querySelectorAll('.slide');
+      const slideWidth = slides[0].offsetWidth + 20; // 20px gap
+      const maxSlide = slides.length - Math.ceil(track.parentElement.offsetWidth / slideWidth);
+      
+      currentSlide[carouselId] += direction;
+      
+      if (currentSlide[carouselId] < 0) {
+        currentSlide[carouselId] = 0;
+      } else if (currentSlide[carouselId] > maxSlide) {
+        currentSlide[carouselId] = maxSlide;
+      }
+      
+      updateCarousel(carouselId);
+    }
+
+    function goToSlide(carouselId, slideIndex) {
+      currentSlide[carouselId] = slideIndex;
+      updateCarousel(carouselId);
+    }
+
+    function updateCarousel(carouselId) {
+      const track = document.getElementById(`track-${carouselId}`);
+      const slides = track.querySelectorAll('.slide');
+      const slideWidth = slides[0].offsetWidth + 20; // 20px gap
+      const translateX = -currentSlide[carouselId] * slideWidth;
+      
+      track.style.transform = `translateX(${translateX}px)`;
+      
+      // Update indicators
+      const indicators = document.querySelectorAll(`#indicators-${carouselId} .indicator`);
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide[carouselId]);
+      });
+      
+      // Update navigation buttons
+      const prevBtn = document.querySelector(`#${carouselId} .prev`);
+      const nextBtn = document.querySelector(`#${carouselId} .next`);
+      const maxSlide = slides.length - Math.ceil(track.parentElement.offsetWidth / slideWidth);
+      
+      prevBtn.style.opacity = currentSlide[carouselId] === 0 ? '0.5' : '1';
+      nextBtn.style.opacity = currentSlide[carouselId] >= maxSlide ? '0.5' : '1';
+    }
+
+    // Touch/swipe support for mobile
+    let startX = 0;
+    let startY = 0;
+    
+    document.addEventListener('touchstart', function(e) {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+    
+    document.addEventListener('touchend', function(e) {
+      if (!startX || !startY) return;
+      
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      
+      const diffX = startX - endX;
+      const diffY = startY - endY;
+      
+      // Only trigger if horizontal swipe is more significant than vertical
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
+        const carousel = e.target.closest('.carousel');
+        if (carousel) {
+          const carouselId = carousel.id;
+          if (diffX > 0) {
+            moveSlide(carouselId, 1); // Swipe left - next slide
+          } else {
+            moveSlide(carouselId, -1); // Swipe right - previous slide
+          }
+        }
+      }
+      
+      startX = 0;
+      startY = 0;
+    });
+
+    // Keyboard support
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowLeft') {
+        const activeCarousel = document.querySelector('.carousel');
+        if (activeCarousel) {
+          moveSlide(activeCarousel.id, -1);
+        }
+      } else if (e.key === 'ArrowRight') {
+        const activeCarousel = document.querySelector('.carousel');
+        if (activeCarousel) {
+          moveSlide(activeCarousel.id, 1);
+        }
+      }
+    });
+  </script>
 </body>
 </html>
