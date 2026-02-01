@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Descubra como assumir o controle da sua saúde com o GSI da Dra. Yallana. Medicina integrativa, autonomia e conhecimento para uma vida mais saudável. Acesso vitalício por apenas R$ 147." />
-  <title>GSI - Guia da Saúde Integrada | Dra. Yallana | Medicina Integrativa</title>
+  <meta name="description" content="Você não está ficando velha. Você pode estar desnutrida em nível celular. O GSI da Dra. Yallana Arruda ensina, em um protocolo de 6 semanas, os pilares de saúde integrativa: hormônios, energia, exames e hábitos. Acesso por R$ 147." />
+  <title>GSI - Guia da Saúde Integrada | Dra. Yallana Arruda | Medicina Integrativa</title>
   
   <!-- Facebook Pixel Code -->
   <script>
@@ -30,17 +30,17 @@
   <style>
     /* ===== CSS VARIABLES ===== */
     :root {
-      /* Colors */
+      /* Verde #708238 = botões + tipografia; terracotta #984216 = não clicáveis / destaque */
       --bg: #ffffff;
       --ink: #1a1a1a;
       --muted: #6b7280;
       --stroke: #e5e7eb;
-      --brand: #059669;
-      --brand-2: #10b981;
-      --accent: #dc2626;
-      --danger: #dc2626;
-      --soft: #f0fdf4;
-      --success: #16a34a;
+      --brand: #708238;
+      --brand-2: #7d8f42;
+      --accent: #984216;
+      --danger: #984216;
+      --soft: #f3f4ef;
+      --success: #708238;
       --warning: #f59e0b;
       --info: #3b82f6;
       
@@ -96,12 +96,12 @@
     /* ===== BUTTONS ===== */
     .btn {
       display: inline-block;
-      background: linear-gradient(135deg, var(--accent), #b91c1c);
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
       color: #fff;
       font-weight: 700;
       padding: 16px 32px;
       border-radius: 50px;
-      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.3);
+      box-shadow: 0 8px 20px rgba(112, 130, 56, 0.35);
       transition: all 0.3s ease;
       font-size: 1.1rem;
       text-align: center;
@@ -111,15 +111,15 @@
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 30px rgba(220, 38, 38, 0.4);
-      background: linear-gradient(135deg, #dc2626, #991b1b);
+      box-shadow: 0 12px 30px rgba(112, 130, 56, 0.45);
+      background: linear-gradient(135deg, #7d8f42, #5c6b2e);
     }
 
     .btn--ghost {
       background: #fff;
       color: var(--brand);
       border: 2px solid var(--brand);
-      box-shadow: 0 4px 15px rgba(5, 150, 105, 0.2);
+      box-shadow: 0 4px 15px rgba(112, 130, 56, 0.2);
     }
 
     .btn--ghost:hover {
@@ -136,7 +136,7 @@
     .hero {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #f8fbfb, #fff, #f0fdf4);
+      background: linear-gradient(135deg, #f6f7f2, #fff, #f3f4ef);
       padding: 60px 0 40px;
       border-bottom: 1px solid var(--stroke);
     }
@@ -148,14 +148,14 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at 20% 80%, rgba(5, 150, 105, 0.05) 0%, transparent 50%),
-                  radial-gradient(circle at 80% 20%, rgba(220, 38, 38, 0.05) 0%, transparent 50%);
+      background: radial-gradient(circle at 20% 80%, rgba(112, 130, 56, 0.06) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(152, 66, 22, 0.05) 0%, transparent 50%);
       pointer-events: none;
     }
 
     .hero__grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.35fr 0.65fr;
       gap: 32px;
       align-items: center;
     }
@@ -230,37 +230,37 @@
 
     .card--interactive {
       transition: all 0.4s ease;
-      cursor: pointer;
+      cursor: default;
     }
 
     .card--interactive:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
     }
 
     .card--problem {
-      background: linear-gradient(135deg, #fff, #fef2f2);
-      border: 3px solid #fecaca;
-      box-shadow: 0 15px 35px rgba(220, 38, 38, 0.15);
+      background: linear-gradient(135deg, #fff, #fef8f5);
+      border: 3px solid #e8d5c4;
+      box-shadow: 0 15px 35px rgba(152, 66, 22, 0.12);
       position: relative;
       overflow: hidden;
       padding: 25px 60px 25px 25px;
     }
 
     .card--problem:hover {
-      box-shadow: 0 20px 45px rgba(220, 38, 38, 0.25);
+      box-shadow: 0 20px 45px rgba(152, 66, 22, 0.18);
     }
 
     .card--benefit {
-      background: linear-gradient(135deg, #fff, #f0fdf4);
-      border: 3px solid #bbf7d0;
-      box-shadow: 0 15px 35px rgba(5, 150, 105, 0.15);
+      background: linear-gradient(135deg, #fff, #f3f4ef);
+      border: 3px solid #c5ccb8;
+      box-shadow: 0 15px 35px rgba(112, 130, 56, 0.1);
       position: relative;
       overflow: hidden;
     }
 
     .card--benefit:hover {
-      box-shadow: 0 20px 45px rgba(5, 150, 105, 0.25);
+      box-shadow: 0 20px 45px rgba(112, 130, 56, 0.18);
     }
 
     .card--question {
@@ -318,7 +318,7 @@
       color: #fff;
       font-size: 1rem;
       font-weight: 700;
-      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+      box-shadow: 0 4px 12px rgba(152, 66, 22, 0.25);
     }
 
     .badge--large {
@@ -330,7 +330,7 @@
       background: linear-gradient(135deg, var(--brand), var(--brand-2));
       font-size: 1.3rem;
       font-weight: 900;
-      box-shadow: 0 6px 18px rgba(5, 150, 105, 0.25);
+      box-shadow: 0 6px 18px rgba(112, 130, 56, 0.3);
       z-index: 2;
     }
 
@@ -592,7 +592,7 @@
       color: var(--brand);
       font-size: 2.5rem;
       font-weight: 800;
-      text-shadow: 0 2px 4px rgba(5, 150, 105, 0.1);
+      text-shadow: 0 2px 4px rgba(112, 130, 56, 0.15);
     }
 
     .track {
@@ -614,14 +614,14 @@
       background: white;
       border-radius: 15px;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(5, 150, 105, 0.1);
+      box-shadow: 0 10px 30px rgba(112, 130, 56, 0.12);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
     }
 
     .slide:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 40px rgba(5, 150, 105, 0.2);
+      box-shadow: 0 20px 40px rgba(112, 130, 56, 0.2);
     }
 
     .slide img {
@@ -646,7 +646,7 @@
       cursor: pointer;
       font-size: 1.5rem;
       font-weight: bold;
-      box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
+      box-shadow: 0 5px 15px rgba(112, 130, 56, 0.35);
       transition: all 0.3s ease;
       z-index: 10;
     }
@@ -657,11 +657,11 @@
     }
 
     .carousel-nav.prev {
-      left: -25px;
+      left: 10px;
     }
 
     .carousel-nav.next {
-      right: -25px;
+      right: 10px;
     }
 
     /* Indicadores */
@@ -676,7 +676,7 @@
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      background: rgba(5, 150, 105, 0.3);
+      background: rgba(112, 130, 56, 0.3);
       cursor: pointer;
       transition: background 0.3s ease;
     }
@@ -706,11 +706,11 @@
       }
       
       .carousel-nav.prev {
-        left: -20px;
+        left: 10px;
       }
       
       .carousel-nav.next {
-        right: -20px;
+        right: 10px;
       }
     }
   </style>
@@ -722,54 +722,52 @@
       <div class="hero__content">
         <div style="display:flex;align-items:center;gap:15px;margin-bottom:1rem;flex-wrap:wrap">
           <span class="eyebrow eyebrow--accent">⚡ Acesso Imediato • 1 Ano de Acesso</span>
-          <div style="display:flex;align-items:center;gap:8px;background:#fff;padding:6px 12px;border-radius:20px;border:1px solid var(--brand);box-shadow:0 2px 8px rgba(5,150,105,0.1)">
-            <div style="width:8px;height:8px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
-            <span style="font-size:0.8rem;color:var(--brand);font-weight:600">+300 pessoas transformadas</span>
+          <div style="display:flex;align-items:center;gap:8px;background:#f8fafc;padding:6px 12px;border-radius:8px;border:1px solid var(--stroke);cursor:default">
+            <div style="width:8px;height:8px;background:var(--accent);border-radius:50%"></div>
+            <span style="font-size:0.8rem;color:var(--accent);font-weight:600">+300 mulheres já foram acompanhadas</span>
           </div>
         </div>
-        <h1 style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:clamp(2.2rem,4.5vw,3.5rem);line-height:1.1;margin:0.5rem 0 1.5rem;font-weight:900;text-shadow:0 4px 8px rgba(5,150,105,0.1)">Transforme Sua Saúde <span style="color:var(--accent)">Definitivamente</span></h1>
-        <p class="lead" style="font-size:1.2rem;color:var(--muted);max-width:55ch;margin-bottom:2rem;line-height:1.6">Descubra o <strong style="color:var(--brand)">método comprovado</strong> que já ajudou <strong style="color:var(--accent)">+300 pessoas</strong> a recuperarem energia, eliminarem dores crônicas e viverem com vitalidade — <strong>sem depender de remédios desnecessários</strong>.</p>
+        <h1 style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:clamp(1.85rem,3.4vw,2.7rem);line-height:1.08;margin:0.5rem 0 1rem;font-weight:900;text-shadow:0 4px 8px rgba(112,130,56,0.15)">Você não está ficando velha.<br>Você pode estar desnutrida.</h1>
+        <p class="lead" style="font-size:1.15rem;color:var(--muted);max-width:56ch;margin-bottom:1.5rem;line-height:1.6">O GSI te guia por um protocolo de 6 semanas pra você entender o que está te drenando e começar a ajustar, na prática, os pilares que mudam energia, ciclo e composição corporal — a começar por desnutrição em <strong>nível celular</strong>.</p>
         
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;margin-bottom:2rem">
-          <div class="card" style="background:linear-gradient(135deg,var(--soft),#f0fdf4);border-left:4px solid var(--brand);padding:20px;position:relative;overflow:hidden">
-            <div style="position:absolute;top:-10px;right:-10px;width:40px;height:40px;background:var(--brand);border-radius:50%;opacity:0.1"></div>
-            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1rem">🎯 <strong style="color:var(--brand)">Estratégias práticas</strong> de medicina integrativa</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;margin-bottom:1.5rem">
+          <div class="card" style="background:linear-gradient(135deg,var(--soft),#f3f4ef);border-left:4px solid var(--brand);padding:18px;position:relative;overflow:hidden">
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:0.95rem">🎯 Medicina integrativa baseada em evidência</p>
           </div>
-          <div class="card" style="background:linear-gradient(135deg,#fff,#fef7f0);border-left:4px solid #f97316;padding:20px;position:relative;overflow:hidden">
-            <div style="position:absolute;top:-10px;right:-10px;width:40px;height:40px;background:#f97316;border-radius:50%;opacity:0.1"></div>
-            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1rem">⚡ <strong style="color:#f97316">Resultados comprovados</strong> com método científico</p>
+          <div class="card" style="background:linear-gradient(135deg,#fff,#fef7f0);border-left:4px solid #f97316;padding:18px;position:relative;overflow:hidden">
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:0.95rem">⚡ Resolver a causa, não o sintoma</p>
           </div>
         </div>
         
-        <div style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#fff,#f8fafc);padding:20px;border-radius:16px;border:2px solid var(--stroke);box-shadow:0 8px 25px rgba(0,0,0,0.08);margin-bottom:2rem;flex-wrap:wrap;gap:15px">
+        <div style="display:flex;align-items:center;justify-content:space-between;background:linear-gradient(135deg,#fff,#f8fafc);padding:18px;border-radius:16px;border:2px solid var(--stroke);box-shadow:0 8px 25px rgba(0,0,0,0.08);margin-bottom:1.5rem;flex-wrap:wrap;gap:12px">
           <div style="display:flex;align-items:center;gap:12px">
             <div style="display:flex;gap:5px">
-              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
-              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite;animation-delay:0.5s"></div>
-              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite;animation-delay:1s"></div>
+              <div style="width:12px;height:12px;background:var(--success);border-radius:50%"></div>
+              <div style="width:12px;height:12px;background:var(--success);border-radius:50%"></div>
+              <div style="width:12px;height:12px;background:var(--success);border-radius:50%"></div>
             </div>
-            <span style="font-size:1rem;color:var(--ink);font-weight:700">+300 pessoas já transformaram sua saúde</span>
+            <span style="font-size:0.95rem;color:var(--ink);font-weight:700">+300 mulheres já foram acompanhadas pela Dra. Yallana</span>
           </div>
-          <div style="display:flex;align-items:center;gap:8px;background:var(--brand);color:#fff;padding:8px 16px;border-radius:20px;font-size:0.9rem;font-weight:600">
+          <div style="display:flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:6px 10px;border-radius:8px;font-size:0.9rem;font-weight:600;opacity:0.95;cursor:default">
             <span>🏆</span>
-            <span>Médica Certificada USP</span>
+            <span>Nutróloga USP • Medicina Integrativa</span>
           </div>
         </div>
         
         <div class="hero__actions" style="position:relative">
-          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});" style="position:relative;overflow:hidden;font-size:1.2rem;padding:18px 40px;box-shadow:0 12px 35px rgba(220,38,38,0.4);transform:scale(1.02)">
-            <span style="position:relative;z-index:2">🚀 QUERO TRANSFORMAR MINHA SAÚDE AGORA</span>
+          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="if(typeof fbq!=='undefined'){fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});}" style="position:relative;overflow:hidden;font-size:1.15rem;padding:18px 40px;box-shadow:0 12px 35px rgba(112,130,56,0.4);transform:scale(1.02)">
+            <span style="position:relative;z-index:2">👉 QUERO ME SENTIR VIVA DE NOVO</span>
             <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
           </a>
-          <a class="btn btn--ghost" href="#video" onclick="fbq('track', 'ViewContent', {content_name: 'Vídeo Apresentação GSI', content_category: 'Saúde Integrativa'});" style="font-size:1.1rem;padding:16px 32px;border:2px solid var(--brand);position:relative;overflow:hidden">
+          <a class="btn btn--ghost" href="#video" onclick="if(typeof fbq!=='undefined'){fbq('track', 'ViewContent', {content_name: 'Vídeo Apresentação GSI', content_category: 'Saúde Integrativa'});}" style="font-size:1.05rem;padding:16px 32px;border:2px solid var(--brand);position:relative;overflow:hidden">
             <span style="position:relative;z-index:2">▶️ Ver Apresentação Gratuita</span>
           </a>
         </div>
         
-        <div style="text-align:center;margin-top:20px">
+        <div style="text-align:center;margin-top:18px">
           <p style="margin:0;font-size:0.9rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px">
             <span>🔒</span>
-            <span>Compra 100% segura • Garantia de 7 dias</span>
+            <span>Compra 100% segura • Garantia incondicional de 7 dias</span>
           </p>
         </div>
       </div>
@@ -787,52 +785,136 @@
     <div class="container">
       <h2>Assista à apresentação</h2>
       <div class="video__wrap">
-        <iframe src="https://www.youtube.com/embed/gYlLt_uhv1M" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/gYlLt_uhv1M" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
       </div>
     </div>
   </section>
 
-  <!-- ===== PROBLEMA/DOR ===== -->
+  <!-- ===== PROBLEMA/DOR + VOCÊ SE RECONHECE ===== -->
   <section class="section section--soft">
     <div class="container">
-      <h2 style="text-align:center;margin:0 0 1rem;color:var(--ink);font-size:2.8rem;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Você Se Reconhece Nesta Situação?</h2>
-      <div style="max-width:900px;margin:0 auto;text-align:center">
-        <p style="font-size:1.4rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6">Apesar de toda a tecnologia médica disponível, <strong style="color:var(--accent)">você ainda se sente perdido</strong> quando o assunto é sua própria saúde.</p>
-        <p style="font-size:1.6rem;font-weight:800;color:var(--accent);margin-bottom:3rem;text-transform:uppercase;letter-spacing:1px;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Por que a medicina tradicional não está funcionando?</p>
+      <h2 style="text-align:center;margin:0 0 1rem;color:var(--ink);font-size:2.5rem;font-weight:900;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Você Se Reconhece Aqui?</h2>
+      <div style="max-width:920px;margin:0 auto">
+        <p style="text-align:center;font-size:1.15rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.7">Você tira uma foto e pensa: "Que mulher cansada." Não é o ângulo. Não é a luz. É você — sem brilho, inchada, com aquela expressão de quem tá só segurando as pontas. E você lembra que tá na casa dos 30. Não 54.</p>
+        <p style="text-align:center;font-size:1.1rem;color:var(--muted);margin-bottom:2rem;line-height:1.6">Marca mentalmente quantas dessas frases são <strong style="color:var(--brand)">você</strong>:</p>
         
-        <div class="grid grid--auto" style="margin:3rem 0">
-          <div class="card card--problem card--interactive">
-            <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Acorda exausto mesmo após 8 horas de sono?</p>
+        <div class="grid grid--auto" style="margin:2rem 0">
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Acordo cansada mesmo dormindo 7-8 horas</p>
           </div>
-          <div class="card card--problem card--interactive">
-            <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Faz dieta mas o peso não sai do lugar?</p>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Tenho barriga que não tinha antes (mesmo sem comer mais)</p>
           </div>
-          <div class="card card--problem card--interactive">
-            <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Exames pioram a cada consulta médica?</p>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">TPM me derruba — irritação, inchaço, compulsão alimentar</p>
           </div>
-          <div class="card card--problem card--interactive">
-            <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Recebe apenas mais remédios como "solução"?</p>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Libido sumiu (intimidade virou obrigação quando rola)</p>
           </div>
-          <div class="card card--problem card--interactive">
-            <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Perdeu a esperança de ter energia real?</p>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Olho no espelho e não me reconheço</p>
           </div>
-          <div class="card card--problem card--interactive">
-            <div class="badge">❌</div>
-            <p style="margin:0;font-weight:800;color:var(--accent);font-size:1.2rem;line-height:1.4;text-shadow:0 2px 4px rgba(220,38,38,0.1)">Dores misteriosas que ninguém explica?</p>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Não tenho energia pra nada além de obrigações</p>
+          </div>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Ciclo menstrual irregular (atrasa, adiantou, muda fluxo)</p>
+          </div>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Me sinto velha sem ser velha</p>
+          </div>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Faço dieta mas peso não sai</p>
+          </div>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Pele apagada, sem viço</p>
+          </div>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Esqueço coisas, névoa mental</p>
+          </div>
+          <div class="card card--problem">
+            <div class="badge">□</div>
+            <p style="margin:0;font-weight:700;color:var(--ink);font-size:1.05rem;line-height:1.5">Qualquer foto minha parece de alguém exausta</p>
           </div>
         </div>
         
-        <div class="card" style="background:var(--brand);color:#fff;padding:30px;border-radius:16px;margin:2rem 0">
-          <h3 style="margin:0 0 1rem;font-size:1.5rem">A solução está no conhecimento.</h3>
-          <p style="margin:0;font-size:1.2rem;font-weight:600">E na sua autonomia para decidir.</p>
+        <div class="card" style="background:var(--accent);color:#fff;padding:28px;border-radius:16px;margin:2rem 0;text-align:center">
+          <h3 style="margin:0 0 0.5rem;font-size:1.4rem">Se você se identificou com 5 ou mais…</h3>
+          <p style="margin:0;font-size:1.25rem;font-weight:700">Você não tá ficando velha.<br>Você está <strong>DESNUTRIDA</strong>.</p>
+          <p style="margin:1rem 0 0;font-size:1rem;opacity:0.95;line-height:1.5">E não estou falando de comida. Estou falando de nutrição <strong>celular</strong>. Seus hormônios desnutridos. Suas células desnutridas. Seu corpo funcionando no "modo economia" há tanto tempo que você esqueceu como é ter energia de verdade.</p>
         </div>
-        
-        <p style="font-size:1.3rem;font-weight:700;color:var(--brand);margin:2rem 0">A boa notícia? Existe uma abordagem integrativa que pode transformar sua saúde — e ela está aqui.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== O PADRÃO / O QUE ROUBA SUA ENERGIA ===== -->
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 1rem;color:var(--brand);font-size:2.2rem;font-weight:900">O Padrão Que Você Não Estava Vendo</h2>
+      <div style="max-width:800px;margin:0 auto 2rem;text-align:center">
+        <p style="font-size:1.15rem;color:var(--muted);line-height:1.7">Você não está envelhecendo. Você está <strong style="color:var(--accent)">desnutrida em nível celular</strong>. E isso não é semântica — é uma diferença que muda tudo. Aos 35 anos você deveria estar no <strong>auge</strong>. Com energia. Com libido. Com um corpo que responde quando você cuida dele. Mas não é o que tá acontecendo.</p>
+      </div>
+      <h3 style="text-align:center;margin:0 0 1.5rem;color:var(--ink);font-size:1.5rem;font-weight:800">O que tá roubando sua energia</h3>
+      <div class="grid grid--auto" style="max-width:1000px;margin:0 auto">
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">1</div>
+          <h4 style="color:var(--brand);margin:0 0 10px;font-size:1.2rem;font-weight:800">Hormônios desregulados</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">Estrogênio, progesterona, cortisol, insulina, testosterona — quando um sai do lugar, efeito dominó: cortisol alto, insulina desregula, você engorda na barriga; estrogênio baixo, pele perde viço, libido cai. E os exames dão "normais" porque olham pra faixa genérica, não pro que é <strong>ideal</strong> pra você.</p>
+        </div>
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">2</div>
+          <h4 style="color:var(--brand);margin:0 0 10px;font-size:1.2rem;font-weight:800">Inflamação silenciosa</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">Seu corpo está inflamado. Não é inflamação que dói — é a que te deixa inchada, dificulta emagrecer, derruba energia, envelhece a pele e bagunça hormônios. Vem de alimentação errada, sono ruim, estresse, intestino desregulado. Você não vê. Mas ela tá lá.</p>
+        </div>
+        <div class="card card--benefit card--interactive">
+          <div class="badge badge--large">3</div>
+          <h4 style="color:var(--brand);margin:0 0 10px;font-size:1.2rem;font-weight:800">Ciclo menstrual que você não domina</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">Seu ciclo deveria ser um <strong>indicador</strong> de saúde, não uma sentença de sofrimento. TPM forte, cólica intensa, ciclo irregular = seu corpo gritando que algo está errado. Em vez de investigar a causa, te empurram anticoncepcional ou dizem "é assim mesmo".</p>
+        </div>
+      </div>
+      <p style="text-align:center;margin:2rem 0 0;font-size:1.1rem;color:var(--muted);line-height:1.6">Por isso dieta sozinha não funciona (não resolve hormônio). Por isso remédio não funciona (mascara sintoma). Por isso "força de vontade" não funciona (problema não é mental, é bioquímico).</p>
+    </div>
+  </section>
+
+  <!-- ===== POR QUE NÃO É CULPA SUA ===== -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--ink);font-size:2rem;font-weight:900">Por Que Não É Culpa Sua</h2>
+      <p style="text-align:center;max-width:700px;margin:0 auto 2rem;font-size:1.2rem;color:var(--muted);line-height:1.6">Antes de qualquer coisa: <strong style="color:var(--brand)">não é culpa sua</strong>. Você não "se deixou". Você não é fraca. Você está operando com as informações <strong>erradas</strong> sobre o próprio corpo.</p>
+      <div class="grid grid--auto" style="max-width:1000px;margin:0 auto">
+        <div class="card" style="padding:25px;border-left:4px solid var(--brand)">
+          <h4 style="margin:0 0 10px;color:var(--brand);font-size:1.15rem">1. Médicos tratam sintomas, não causas</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">Você chega e fala: "Tô cansada, não emagreço, TPM tá insuportável." Resposta padrão: exames, "tudo normal", anticoncepcional, vitamina D. Ninguém investiga alimentação, sono, hormônios IDEAIS, inflamação, resistência à insulina.</p>
+        </div>
+        <div class="card" style="padding:25px;border-left:4px solid #f97316">
+          <h4 style="margin:0 0 10px;color:#f97316;font-size:1.15rem">2. A indústria te convenceu que você precisa sofrer</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">TPM forte? "É normal." Cansaço? "Coisa de mãe." A indústria <strong>lucra</strong> com você mal — anticoncepcional, cremes, remédios. Não é normal.</p>
+        </div>
+        <div class="card" style="padding:25px;border-left:4px solid var(--accent)">
+          <h4 style="margin:0 0 10px;color:var(--accent);font-size:1.15rem">3. Você foi ensinada a priorizar todo mundo menos você</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">Filho, marido, trabalho, casa. Quando é pra cuidar de você? "Depois." Cuidar de si não é egoísmo. A gente só acostumou com a mediocridade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== O QUE ACONTECE SE VOCÊ NÃO MUDAR ===== -->
+  <section class="section" style="background:#fff">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 1rem;color:var(--accent);font-size:1.8rem;font-weight:900">O Que Acontece Se Você Não Mudar</h2>
+      <div style="max-width:700px;margin:0 auto;text-align:center">
+        <p style="font-size:1.05rem;color:var(--ink);line-height:1.6;margin:0">Não vou fingir que tá tudo bem se você fechar essa página e voltar pro piloto automático. Daqui 1 ano: você vai estar mais pesada, mais cansada, mais irritada, mais distante. E o pior não é o corpo — é o <strong>arrependimento</strong>. É você olhar no espelho daqui 5 anos e pensar: "Por que eu não cuidei disso quando ainda tinha tempo?" Eu não tô falando isso pra te assustar. Tô falando porque é a <strong>verdade</strong>. E você já sabe disso.</p>
       </div>
     </div>
   </section>
@@ -840,69 +922,72 @@
   <!-- ===== BENEFÍCIOS ===== -->
   <section class="section" data-section="Benefícios e Módulos">
     <div class="container">
-      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">O Que Você Vai Aprender no GSI</h2>
-      <p style="text-align:center;font-size:1.1rem;color:var(--muted);max-width:800px;margin:0 auto 3rem;line-height:1.6">O GSI é estruturado em 7 módulos, cada um focado em um pilar essencial para quem quer ter mais autonomia na saúde:</p>
+      <h2 style="text-align:center;margin:0 0 1rem;color:var(--brand);font-size:2rem">A Solução</h2>
+      <p style="text-align:center;font-size:1.1rem;color:var(--muted);max-width:800px;margin:0 auto 3rem;line-height:1.6">O GSI é dividido em <strong>7 módulos</strong> que cobrem os pilares fundamentais da sua saúde. Não é sobre estética — é sobre você se sentir BEM, ter energia, dominar seu ciclo e voltar a se sentir <strong style="color:var(--brand)">VIVA</strong>.</p>
       
       <div class="grid grid--benefits">
         <div class="card card--benefit card--interactive">
           <div class="badge badge--large">1</div>
-          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Fundamentos da Nutrição</h3>
-          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Para você entender de verdade o que vai no seu prato, <strong>ganhar energia</strong> e <strong>fortalecer a imunidade</strong>.</p>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.35rem;font-weight:800;text-shadow:0 2px 4px rgba(112,130,56,0.15)">Nutrição que regula hormônios</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.05rem;color:var(--ink)">Não é contar caloria. É comer de um jeito que estabiliza insulina, reduz inflamação e dá energia real.</p>
         </div>
         <div class="card card--benefit card--interactive">
           <div class="badge badge--large">2</div>
-          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Hidratação Inteligente</h3>
-          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Para ajustar funções vitais e até <strong>melhorar o humor</strong> com mudanças simples.</p>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.35rem;font-weight:800;text-shadow:0 2px 4px rgba(112,130,56,0.15)">Hidratação que desincha</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.05rem;color:var(--ink)">Você tá inchada não por beber água demais — mas por beber de forma errada. Aprenda a hidratar de um jeito que <strong>desincha</strong>.</p>
         </div>
         <div class="card card--benefit card--interactive">
           <div class="badge badge--large">3</div>
-          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Sono & Saúde</h3>
-          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Para <strong>regular hormônios</strong>, descansar de forma profunda e acordar renovado(a).</p>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.35rem;font-weight:800;text-shadow:0 2px 4px rgba(112,130,56,0.15)">Sono que restaura</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.05rem;color:var(--ink)">Dormir 7 horas e acordar <strong>realmente</strong> descansada. Qualidade é mais importante que quantidade.</p>
         </div>
         <div class="card card--benefit card--interactive">
           <div class="badge badge--large">4</div>
-          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Exercício Físico</h3>
-          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Nada de complicação: <strong>movimentos fáceis</strong> que se encaixam na rotina.</p>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.35rem;font-weight:800;text-shadow:0 2px 4px rgba(112,130,56,0.15)">Movimento que fortalece</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.05rem;color:var(--ink)">Exercício ideal pro <strong>SEU</strong> corpo. Não precisa virar atleta — mas precisa se mover certo.</p>
         </div>
         <div class="card card--benefit card--interactive">
           <div class="badge badge--large">5</div>
-          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Comportamento Alimentar</h3>
-          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Aprenda a lidar com a ansiedade e <strong>ressignificar a relação</strong> com a comida.</p>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.35rem;font-weight:800;text-shadow:0 2px 4px rgba(112,130,56,0.15)">Como dominar a ansiedade alimentar</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.05rem;color:var(--ink)">Parar de atacar o armário às 21h. Entender o que você tá tentando compensar com comida.</p>
         </div>
         <div class="card card--benefit card--interactive">
           <div class="badge badge--large">6</div>
-          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Suplementação Essencial</h3>
-          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Saiba quais são <strong>úteis de fato</strong>, sem gastar dinheiro à toa em promessas vazias.</p>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.35rem;font-weight:800;text-shadow:0 2px 4px rgba(112,130,56,0.15)">Suplementação inteligente</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.05rem;color:var(--ink)">O que funciona (e o que é desperdício de dinheiro). A indústria vive de promessa vazia.</p>
         </div>
         <div class="card card--benefit card--interactive" style="grid-column:span 2;max-width:600px;margin:0 auto">
           <div class="badge badge--large">7</div>
-          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.4rem;font-weight:800;text-shadow:0 2px 4px rgba(5,150,105,0.1)">Leitura de Exames</h3>
-          <p style="margin:0;line-height:1.7;font-size:1.1rem;color:var(--ink)">Entenda os principais marcadores de saúde e <strong>discuta com qualquer médico de igual para igual</strong>.</p>
+          <h3 style="color:var(--brand);margin:10px 0 20px 0;font-size:1.35rem;font-weight:800;text-shadow:0 2px 4px rgba(112,130,56,0.15)">Ler seus exames como uma médica</h3>
+          <p style="margin:0;line-height:1.7;font-size:1.05rem;color:var(--ink)">Identificar se seus hormônios estão <strong>IDEAIS</strong> (não só "normais"). Saber quando algo precisa atenção antes de virar problema.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== PERGUNTAS REFLEXIVAS ===== -->
+  <!-- ===== O QUE MUDA NA SUA VIDA ===== -->
   <section class="section" style="background:linear-gradient(135deg,#f8fafc,#f1f5f9)">
     <div class="container">
-      <h2 style="text-align:center;margin:0 0 3rem;color:var(--ink);font-size:2.5rem;font-weight:800;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Se você me permite, pense nessas perguntas:</h2>
-      <div style="max-width:900px;margin:0 auto">
-        <div class="card card--question" style="margin-bottom:25px">
-          <div class="badge badge--question">❓</div>
-          <p style="margin:0;font-size:1.2rem;line-height:1.7;color:var(--ink);font-weight:600">Será que você sabe <strong>olhar seus exames</strong> para identificar se a sua baixa libido pode ter uma explicação hormonal ou <strong>carência nutricional</strong> bem ali na sua frente?</p>
-        </div>
-        <div class="card card--question" style="margin-bottom:25px">
-          <div class="badge badge--question">❓</div>
-          <p style="margin:0;font-size:1.2rem;line-height:1.7;color:var(--ink);font-weight:600">Será que consegue <strong>prever</strong>, a partir dos próprios indicadores de saúde, se existe um risco alto de desenvolver <strong>diabetes, trombose ou problemas cardíacos</strong> no futuro?</p>
-        </div>
-        <div class="card card--question" style="margin-bottom:40px">
-          <div class="badge badge--question">❓</div>
-          <p style="margin:0;font-size:1.2rem;line-height:1.7;color:var(--ink);font-weight:600">E será que compreende como <strong>alimentar o seu cérebro</strong> para protegê-lo contra doenças psiquiátricas que possam estar sendo disparadas por <strong>inflamações neurológicas</strong> que ninguém nunca lhe explicou?</p>
-        </div>
-        <div class="card" style="background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:40px;border-radius:20px;text-align:center;box-shadow:0 15px 35px rgba(5,150,105,0.25)">
-          <h3 style="margin:0 0 20px;font-size:1.6rem;font-weight:800;text-shadow:0 2px 4px rgba(0,0,0,0.2)">Se a resposta para qualquer uma dessas perguntas foi "não"</h3>
-          <p style="margin:0;font-size:1.3rem;font-weight:700;text-shadow:0 2px 4px rgba(0,0,0,0.2)">então o GSI pode ser o passo que faltava para você realmente <strong>assumir o protagonismo</strong> da sua saúde.</p>
+      <h2 style="text-align:center;margin:0 0 1rem;color:var(--brand);font-size:2.2rem;font-weight:900">O Que Muda na Sua Vida</h2>
+      <p style="text-align:center;max-width:700px;margin:0 auto 2rem;font-size:1.1rem;color:var(--muted);line-height:1.6">Quando você aplicar o GSI, isso é o que você <strong>vai conseguir</strong>:</p>
+      <div style="max-width:950px;margin:0 auto">
+        <div class="grid grid--2" style="gap:20px">
+          <div class="card card--benefit" style="padding:22px">
+            <h4 style="margin:0 0 12px;color:var(--brand);font-size:1.15rem">No espelho</h4>
+            <p style="margin:0;font-size:0.95rem;line-height:1.6;color:var(--ink)">✅ Se reconhecer de novo — mulher que parece VIVA, não exausta<br>✅ Desinchar de verdade<br>✅ Pele com brilho<br>✅ Entrar naquela roupa que você guardou "pra quando emagrecer"<br>✅ Entrar no elevador e não puxar a blusa pra esconder a barriga</p>
+          </div>
+          <div class="card card--benefit" style="padding:22px">
+            <h4 style="margin:0 0 12px;color:var(--brand);font-size:1.15rem">No corpo & energia</h4>
+            <p style="margin:0;font-size:0.95rem;line-height:1.6;color:var(--ink)">✅ Emagrecer sem passar fome, sem efeito sanfona<br>✅ Acordar com DISPOSIÇÃO<br>✅ Chegar no fim do dia e ainda ter energia pra você<br>✅ Brincar com os filhos sem ser maratona — paciência de verdade</p>
+          </div>
+          <div class="card card--benefit" style="padding:22px">
+            <h4 style="margin:0 0 12px;color:var(--brand);font-size:1.15rem">Na libido & ciclo</h4>
+            <p style="margin:0;font-size:0.95rem;line-height:1.6;color:var(--ink)">✅ Voltar a ter DESEJO de verdade<br>✅ Se sentir sexy de novo — MULHER<br>✅ TPM deixa de ser inferno; cólica diminui ou some<br>✅ Ciclo regular, previsível</p>
+          </div>
+          <div class="card card--benefit" style="padding:22px">
+            <h4 style="margin:0 0 12px;color:var(--brand);font-size:1.15rem">Na presença</h4>
+            <p style="margin:0;font-size:0.95rem;line-height:1.6;color:var(--ink)">✅ Sair de casa e se sentir CONFIANTE<br>✅ Postar foto sem filtro e pensar: "Eu tô bem"<br>✅ Ser notada de novo — porque você tá VIBRANTE<br>✅ Seu marido olhar pra você do jeito que olhava quando vocês se conheceram</p>
+          </div>
         </div>
       </div>
     </div>
@@ -911,22 +996,23 @@
   <!-- ===== SOCIAL PROOF ===== -->
   <section class="testimonials" style="padding:60px 0;background:var(--soft)">
     <div class="container">
-      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">Veja o que os alunos estão dizendo sobre o GSI</h2>
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">O Que Elas Dizem</h2>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:20px;max-width:1200px;margin:0 auto">
         <div style="background:#fff;padding:25px;border-radius:16px;border:1px solid var(--stroke);box-shadow:var(--shadow)">
-          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"Muito obrigado! De fato, é um curso bastante transformador, muitos profissionais de modo geral parecem que não entendem algumas leituras de exames, com o GSI consegui entender melhor meus exames."</p>
+          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"Eu achava que meu cansaço era 'coisa de mãe'. Depois do GSI descobri que era inflamação + cortisol alto. 6 semanas depois: acordo descansada pela primeira vez em 3 anos."</p>
           <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:40px;height:40px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">R</div>
+            <div style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">P</div>
             <div>
-              <p style="margin:0;font-weight:600;color:var(--ink)">Reginaldo</p>
-              <p style="margin:0;font-size:0.9rem;color:var(--muted)">Aluno GSI</p>
+              <p style="margin:0;font-weight:600;color:var(--ink)">Paula, 37 anos</p>
+              <p style="margin:0;font-size:0.9rem;color:var(--muted)">Aluna GSI</p>
             </div>
           </div>
         </div>
         <div style="background:#fff;padding:25px;border-radius:16px;border:1px solid var(--stroke);box-shadow:var(--shadow)">
+          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"Meu marido me perguntou se eu tinha feito algum procedimento estético. Eu só disse: regulei meus hormônios."</p>
           <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"Curso incrível, confio de olhos fechados!"</p>
           <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:40px;height:40px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">A</div>
+            <div style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">A</div>
             <div>
               <p style="margin:0;font-weight:600;color:var(--ink)">Ana Paula</p>
               <p style="margin:0;font-size:0.9rem;color:var(--muted)">Aluna GSI</p>
@@ -934,9 +1020,9 @@
           </div>
         </div>
         <div style="background:#fff;padding:25px;border-radius:16px;border:1px solid var(--stroke);box-shadow:var(--shadow)">
-          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"A vida inteira ninguém nunca me falou o que você diz nesse curso, eu to até achando engraçado o quanto são mudanças rápidas, baratas e fáceis que causam tamanho impacto!"</p>
+          <p style="font-style:italic;margin:0 0 15px;color:var(--ink);line-height:1.6">"A vida inteira ninguém nunca me falou o que você ensina nesse curso. Eu tô até achando engraçado o quanto são mudanças rápidas, baratas e fáceis que causam tamanho impacto!"</p>
           <div style="display:flex;align-items:center;gap:10px">
-            <div style="width:40px;height:40px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">V</div>
+            <div style="width:40px;height:40px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700">V</div>
             <div>
               <p style="margin:0;font-weight:600;color:var(--ink)">Veri</p>
               <p style="margin:0;font-size:0.9rem;color:var(--muted)">Aluna GSI</p>
@@ -945,7 +1031,24 @@
         </div>
       </div>
       <div style="text-align:center;margin-top:30px">
-        <p style="font-size:1.1rem;color:var(--muted);margin:0">Mais de <strong style="color:var(--brand)">300 pessoas</strong> já foram auxiliadas pelo conhecimento da Dra. Yallana</p>
+        <p style="font-size:1.1rem;color:var(--muted);margin:0">Mais de <strong style="color:var(--brand)">300 mulheres</strong> já foram acompanhadas pelo conhecimento da Dra. Yallana</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ANTES E DEPOIS ===== -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem;font-weight:900">Antes e Depois</h2>
+      <div class="grid grid--2" style="gap:25px;max-width:900px;margin:0 auto">
+        <div class="card card--problem" style="padding:25px">
+          <h3 style="margin:0 0 15px;color:var(--accent);font-size:1.2rem">Antes do GSI</h3>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">❌ Acorda cansada, passa o dia no automático<br>❌ Olha no espelho e não se reconhece<br>❌ TPM te domina (irritação, inchaço, compulsão)<br>❌ Intimidade virou obrigação — você só quer "cumprir tabela"<br>❌ Guarda a roupa bonita "pra quando emagrecer"<br>❌ Se sente invisível, apagada, velha (mesmo estando na casa dos 30)</p>
+        </div>
+        <div class="card card--benefit" style="padding:25px">
+          <h3 style="margin:0 0 15px;color:var(--brand);font-size:1.2rem">Depois do GSI</h3>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">✅ Acorda descansada, com disposição real<br>✅ Se olha no espelho e pensa: "Eu tô bem"<br>✅ TPM existe mas não te derruba<br>✅ Libido volta — você QUER, não só aceita<br>✅ Usa a roupa bonita e se sente LINDA<br>✅ É vista de novo — porque você voltou a brilhar</p>
+        </div>
       </div>
     </div>
   </section>
@@ -953,36 +1056,36 @@
   <!-- ===== SLIDER: MÓDULOS ===== -->
   <section class="carousel" id="modulos">
     <div class="container">
-      <h2>Conheça os Módulos</h2>
-      <button class="carousel-nav prev" onclick="moveSlide('modulos', -1)">‹</button>
-      <button class="carousel-nav next" onclick="moveSlide('modulos', 1)">›</button>
+      <h2>O Que Você Recebe</h2>
+      <button class="carousel-nav prev" onclick="moveSlide('modulos', -1)" aria-label="Slide anterior">‹</button>
+      <button class="carousel-nav next" onclick="moveSlide('modulos', 1)" aria-label="Próximo slide">›</button>
       <div class="track" id="track-modulos">
         <div class="slide">
-          <img src="images/modulos/fundamentos.png" alt="Fundamentos da Nutrição">
+          <img src="images/modulos/fundamentos.png" alt="Fundamentos da Nutrição" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/hidratacao.png" alt="Hidratação Inteligente">
+          <img src="images/modulos/hidratacao.png" alt="Hidratação Inteligente" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/sono.png" alt="Sono & Saúde">
+          <img src="images/modulos/sono.png" alt="Sono & Saúde" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/exercicios.png" alt="Exercícios & Saúde">
+          <img src="images/modulos/exercicios.png" alt="Exercícios & Saúde" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/comportamento.png" alt="Comportamento Alimentar">
+          <img src="images/modulos/comportamento.png" alt="Comportamento Alimentar" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/exames.png" alt="Leitura de Exames">
+          <img src="images/modulos/exames.png" alt="Leitura de Exames" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/suplementacao.png" alt="Suplementação Essencial">
+          <img src="images/modulos/suplementacao.png" alt="Suplementação Essencial" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/bonus.png" alt="Bônus Extras">
+          <img src="images/modulos/bonus.png" alt="Bônus Extras" loading="lazy">
         </div>
         <div class="slide">
-          <img src="images/modulos/intro.png" alt="Introdução ao Guia">
+          <img src="images/modulos/intro.png" alt="Introdução ao Guia" loading="lazy">
         </div>
       </div>
       <div class="carousel-indicators" id="indicators-modulos">
@@ -1002,15 +1105,26 @@
   <!-- ===== CARROSSEL: PDFs BÔNUS (caminhos confirmados) ===== -->
   <section class="carousel" id="bonus">
     <div class="container">
-      <h2>Bônus Exclusivos</h2>
-      <div class="track">
-        <div class="slide"><img src="images/bonus/testosterona.png" alt="Testosterona Natural"></div>
-        <div class="slide"><img src="images/bonus/foco-memoria.png" alt="Foco & Memória"></div>
-        <div class="slide"><img src="images/bonus/libido.png" alt="Libido"></div>
-        <div class="slide"><img src="images/bonus/alergias-imunidade.png" alt="Alergias & Imunidade"></div>
-        <div class="slide"><img src="images/bonus/figado-detox.png" alt="Fígado & Detox"></div>
-        <div class="slide"><img src="images/bonus/estresse-ansiedade.png" alt="Estresse & Ansiedade"></div>
-        <div class="slide"><img src="images/bonus/depressao.png" alt="Depressão"></div>
+      <h2>7 PDFs Bônus (Materiais Extras)</h2>
+      <button class="carousel-nav prev" onclick="moveSlide('bonus', -1)" aria-label="Slide anterior">‹</button>
+      <button class="carousel-nav next" onclick="moveSlide('bonus', 1)" aria-label="Próximo slide">›</button>
+      <div class="track" id="track-bonus">
+        <div class="slide"><img src="images/bonus/testosterona.png" alt="Testosterona Natural" loading="lazy"></div>
+        <div class="slide"><img src="images/bonus/foco-memoria.png" alt="Foco & Memória" loading="lazy"></div>
+        <div class="slide"><img src="images/bonus/libido.png" alt="Libido" loading="lazy"></div>
+        <div class="slide"><img src="images/bonus/alergias-imunidade.png" alt="Alergias & Imunidade" loading="lazy"></div>
+        <div class="slide"><img src="images/bonus/figado-detox.png" alt="Fígado & Detox" loading="lazy"></div>
+        <div class="slide"><img src="images/bonus/estresse-ansiedade.png" alt="Estresse & Ansiedade" loading="lazy"></div>
+        <div class="slide"><img src="images/bonus/depressao.png" alt="Depressão" loading="lazy"></div>
+      </div>
+      <div class="carousel-indicators" id="indicators-bonus">
+        <span class="indicator active" onclick="goToSlide('bonus', 0)"></span>
+        <span class="indicator" onclick="goToSlide('bonus', 1)"></span>
+        <span class="indicator" onclick="goToSlide('bonus', 2)"></span>
+        <span class="indicator" onclick="goToSlide('bonus', 3)"></span>
+        <span class="indicator" onclick="goToSlide('bonus', 4)"></span>
+        <span class="indicator" onclick="goToSlide('bonus', 5)"></span>
+        <span class="indicator" onclick="goToSlide('bonus', 6)"></span>
       </div>
     </div>
   </section>
@@ -1018,23 +1132,58 @@
   <!-- ===== BÔNUS EXTRAS ===== -->
   <section style="padding:50px 0;background:#fff">
     <div class="container">
-      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">Bônus Especiais Inclusos</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;max-width:1000px;margin:0 auto">
-        <div style="background:var(--soft);padding:25px;border-radius:16px;border:1px solid var(--stroke);text-align:center">
-          <div style="width:60px;height:60px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:#fff;font-size:1.5rem">🎥</div>
-          <h3 style="margin:0 0 10px;color:var(--ink)">Saúde Mental Integrativa</h3>
-          <p style="margin:0;color:var(--muted);line-height:1.5">Videoaula especial sobre abordagem integrativa da saúde mental</p>
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem">Bônus Inclusos</h2>
+      <p style="text-align:center;margin:0 0 1.5rem;font-size:1.05rem;color:var(--ink)">+ 3 bônus extras (aula/temas/assistente) além dos PDFs.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;max-width:1100px;margin:0 auto">
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎁</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Testosterona Natural</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Energia, libido, massa muscular</p>
         </div>
-        <div style="background:var(--soft);padding:25px;border-radius:16px;border:1px solid var(--stroke);text-align:center">
-          <div style="width:60px;height:60px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:#fff;font-size:1.5rem">👩</div>
-          <h3 style="margin:0 0 10px;color:var(--ink)">Saúde Feminina</h3>
-          <p style="margin:0;color:var(--muted);line-height:1.5">Videoaula dedicada aos cuidados específicos da saúde da mulher</p>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎁</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Foco & Memória</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Nutrição pra performance cognitiva</p>
         </div>
-        <div style="background:var(--soft);padding:25px;border-radius:16px;border:1px solid var(--stroke);text-align:center">
-          <div style="width:60px;height:60px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 15px;color:#fff;font-size:1.5rem">🤖</div>
-          <h3 style="margin:0 0 10px;color:var(--ink)">Assistente GSI</h3>
-          <p style="margin:0;color:var(--muted);line-height:1.5">IA personalizada para tirar suas dúvidas sobre saúde integrativa</p>
-          <small style="color:var(--muted);font-style:italic">(não substitui consulta médica)</small>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎁</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Libido</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Abordagem completa pra voltar a sentir desejo</p>
+        </div>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎁</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Alergias & Imunidade</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Fortalecer imunidade de verdade</p>
+        </div>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎁</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Fígado & Detox</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">O que funciona (e o que é balela)</p>
+        </div>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎁</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Estresse & Ansiedade</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Abordagem nutricional e hormonal</p>
+        </div>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎁</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Depressão</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Medicina integrativa e saúde mental</p>
+        </div>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🎥</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Saúde Mental Integrativa</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Videoaula especial</p>
+        </div>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">👩</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Saúde Feminina</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Ciclo menstrual, TPM, menopausa, libido</p>
+        </div>
+        <div style="background:#fff;padding:20px;border-radius:8px;border:1px solid var(--stroke);text-align:left;box-shadow:none;cursor:default">
+          <div style="width:50px;height:50px;background:#111827;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 0 12px 0;color:#fff;font-size:1.2rem">🤖</div>
+          <h3 style="margin:0 0 8px;color:var(--ink);font-size:1rem">Assistente GSI (IA)</h3>
+          <p style="margin:0;color:var(--muted);font-size:0.9rem;line-height:1.4">Tira dúvidas 24/7 sobre saúde integrativa</p>
         </div>
       </div>
     </div>
@@ -1044,82 +1193,68 @@
   <section class="offer" id="checkout" data-section="Seção de Oferta">
     <div class="container offer__grid">
       <div class="pricebox" style="position:relative">
-        <div style="background:linear-gradient(135deg,var(--accent),#b91c1c);color:#fff;padding:12px 20px;border-radius:25px;font-size:0.9rem;font-weight:800;text-align:center;margin-bottom:20px;animation:pulse 2s infinite;box-shadow:0 6px 20px rgba(220,38,38,0.3);position:relative;overflow:hidden">
-          <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
+        <div style="background:linear-gradient(135deg,var(--accent),#b85a28);color:#fff;padding:12px 20px;border-radius:25px;font-size:0.9rem;font-weight:800;text-align:center;margin-bottom:20px;box-shadow:0 6px 20px rgba(152,66,22,0.25);position:relative;overflow:hidden">
           <span style="position:relative;z-index:2">🔥 ÚLTIMAS HORAS - OFERTA ESPECIAL 🔥</span>
         </div>
-        <span class="eyebrow" style="font-size:1rem;color:var(--brand);font-weight:700">Programa Completo • 1 Ano de Acesso • Garantia Total</span>
-        <h2 style="font-size:2.2rem;font-weight:900;color:var(--ink);margin:1rem 0;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Garanta Sua Transformação Hoje</h2>
-        <p style="font-size:1.1rem;color:var(--muted);margin-bottom:1.5rem">Se cada módulo fosse vendido separadamente, custaria <s style="color:var(--muted);font-size:1.2rem">R$ 2.500</s>. <strong style="color:var(--accent)">Hoje você paga apenas uma fração!</strong></p>
+        <span class="eyebrow" style="font-size:1rem;color:var(--accent);font-weight:700">Programa Completo • 1 Ano de Acesso • Garantia Total</span>
+        <h2 style="font-size:2.2rem;font-weight:900;color:var(--ink);margin:1rem 0;text-shadow:0 2px 4px rgba(0,0,0,0.1)">Investimento</h2>
+        <p style="font-size:1.1rem;color:var(--muted);margin-bottom:1.5rem">Se você fosse fazer consultas particulares com a Dra. Yallana pra abordar todos esses temas: mínimo R$ 2.500 (5 consultas de R$ 500). Se fosse fazer uma pós em medicina integrativa: R$ 15.000 a R$ 40.000. Preço do GSI hoje:</p>
         <div style="text-align:center;margin:2rem 0;position:relative">
-          <div style="display:inline-block;background:linear-gradient(135deg,var(--accent),#b91c1c);color:#fff;padding:12px 24px;border-radius:30px;font-size:1rem;font-weight:800;margin-bottom:1.5rem;box-shadow:0 8px 25px rgba(220,38,38,0.3);animation:pulse 2s infinite">
-            🚨 OFERTA RELÂMPAGO 🚨
-          </div>
           <div style="display:flex;align-items:baseline;justify-content:center;gap:15px;margin:1.5rem 0;position:relative">
             <div style="position:relative">
               <span style="color:var(--muted);font-size:1.4rem;text-decoration:line-through;font-weight:600">R$ 497</span>
               <div style="position:absolute;top:50%;left:0;right:0;height:3px;background:var(--accent);transform:translateY(-50%)"></div>
             </div>
-            <div class="price" style="color:var(--accent);font-size:4rem;font-weight:900;margin:0;text-shadow:0 4px 8px rgba(220,38,38,0.2);position:relative">
+            <div class="price" style="color:var(--accent);font-size:4rem;font-weight:900;margin:0;text-shadow:0 4px 8px rgba(152,66,22,0.2);position:relative">
               R$ 147
               <div style="position:absolute;top:-10px;right:-20px;background:var(--accent);color:#fff;padding:4px 8px;border-radius:12px;font-size:0.7rem;font-weight:800;transform:rotate(15deg)">-70%</div>
             </div>
           </div>
           <p style="margin:0;color:var(--muted);font-size:1.2rem;font-weight:600">em até 12x de <strong style="color:var(--brand)">R$ 12,25</strong> • 1 ano de acesso</p>
-          <div style="background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#fff;padding:20px 30px;border-radius:35px;font-size:1.1rem;font-weight:800;text-align:center;margin:25px 0;display:inline-block;box-shadow:0 12px 30px rgba(5,150,105,0.4);position:relative;overflow:hidden">
-            <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
-            <span style="position:relative;z-index:2">💰 MENOS QUE UMA CONSULTA MÉDICA!</span>
+          <div style="background:linear-gradient(135deg,var(--accent),#b85a28);color:#fff;padding:12px 16px;border-radius:10px;font-size:1.1rem;font-weight:800;text-align:center;margin:25px 0;display:inline-block;border:1px dashed rgba(152,66,22,0.4);cursor:default">
+            <span>💰 MENOS QUE UMA CONSULTA MÉDICA!</span>
           </div>
+          <p style="margin:1rem 0 0;font-size:1rem;color:var(--ink);line-height:1.8">✅ 7 módulos completos • ✅ 10 bônus temáticos (incluindo Saúde Feminina) • ✅ 1 ano de acesso • ✅ Assistente IA pra tirar dúvidas • ✅ Garantia incondicional de 7 dias</p>
+          <p style="margin:0.5rem 0 0;font-size:0.95rem;color:var(--muted)">Acesso imediato assim que você finalizar a compra.</p>
         </div>
-        <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});" style="width:100%;font-size:1.4rem;padding:25px;margin:25px 0;position:relative;overflow:hidden;box-shadow:0 15px 40px rgba(220,38,38,0.4);transform:scale(1.02)">
-          <span style="position:relative;z-index:2">🚀 SIM! QUERO TRANSFORMAR MINHA SAÚDE AGORA</span>
-          <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:shimmer 3s infinite"></div>
+        <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="if(typeof fbq!=='undefined'){fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});}" style="width:100%;font-size:1.4rem;padding:25px;margin:25px 0;box-shadow:0 15px 40px rgba(112,130,56,0.4);transform:scale(1.02)">
+          <span style="position:relative;z-index:2">👉 QUERO ME SENTIR VIVA DE NOVO</span>
         </a>
-        <div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);padding:20px;border-radius:16px;margin:20px 0;border:2px solid var(--brand);text-align:center">
+        <div style="background:linear-gradient(135deg,#f3f4ef,#e8ebe4);padding:20px;border-radius:16px;margin:20px 0;border:2px solid var(--brand);text-align:center">
           <p style="margin:0;font-size:1.1rem;color:var(--brand);font-weight:700">🛡️ <strong>Garantia Incondicional de 7 Dias</strong></p>
-          <p style="margin:5px 0 0;font-size:1rem;color:var(--ink)">Se não ficar 100% satisfeito, devolvemos seu dinheiro sem perguntas</p>
-        </div>
-        
-        <div style="background:linear-gradient(135deg,#fef3c7,#fde68a);padding:25px;border-radius:16px;margin-top:25px;border:3px solid #f59e0b;text-align:center;animation:pulse 2s infinite;position:relative;overflow:hidden">
-          <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(45deg,transparent 25%,rgba(255,255,255,0.1) 25%,rgba(255,255,255,0.1) 50%,transparent 50%,transparent 75%,rgba(255,255,255,0.1) 75%);background-size:20px 20px;animation:move 1s linear infinite"></div>
-          <p style="margin:0;font-size:1.1rem;color:#92400e;font-weight:800;position:relative;z-index:2">⚠️ <strong>OFERTA POR TEMPO LIMITADO!</strong></p>
-          <p style="margin:8px 0 0;font-size:1rem;color:#92400e;position:relative;z-index:2">Após o prazo, o valor volta para R$ 497</p>
+          <p style="margin:5px 0 0;font-size:1rem;color:var(--ink)">Você tem 7 dias pra avaliar com calma. Se não fizer sentido pra você, a devolução é integral.</p>
         </div>
         
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin-top:25px">
-          <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:var(--soft);border-radius:12px;border:1px solid var(--brand)">
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#faf6f2;border-radius:12px;border:1px solid rgba(152,66,22,0.35)">
             <div style="display:flex;align-items:center;gap:8px">
-              <div style="width:12px;height:12px;background:var(--success);border-radius:50%;animation:pulse 2s infinite"></div>
-              <span style="font-size:0.9rem;color:var(--ink);font-weight:600">+300 transformadas</span>
+              <div style="width:12px;height:12px;background:var(--accent);border-radius:50%"></div>
+              <span style="font-size:0.9rem;color:var(--accent);font-weight:600">+300 mulheres já foram acompanhadas</span>
             </div>
           </div>
           <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#fef3c7;border-radius:12px;border:1px solid #f59e0b">
             <span style="font-size:1.2rem">⚡</span>
             <span style="font-size:0.9rem;color:#92400e;font-weight:600">Acesso Imediato</span>
           </div>
-          <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#f0fdf4;border-radius:12px;border:1px solid var(--brand)">
+          <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#faf6f2;border-radius:12px;border:1px solid rgba(152,66,22,0.35)">
             <span style="font-size:1.2rem">🛡️</span>
-            <span style="font-size:0.9rem;color:var(--brand);font-weight:600">Garantia Total</span>
+            <span style="font-size:0.9rem;color:var(--accent);font-weight:600">Garantia Total</span>
           </div>
         </div>
       </div>
       <div class="card" style="padding:30px">
-        <h3 style="color:var(--brand);margin-bottom:20px">Conheça a médica por trás do GSI</h3>
-        <h4 style="margin:0 0 15px;font-size:1.3rem">Quem é a Dra. Yallana?</h4>
-        <p style="margin-bottom:15px;line-height:1.6">Me chamo <strong>Yallana Arruda Moreira</strong>, sou médica há quase 10 anos e, por boa parte desse tempo, atuei como nutróloga. Sou movida pela certeza de que os pacientes merecem uma saúde mais autônoma — onde tenham conhecimento para tomar decisões informadas e assumam o protagonismo da própria saúde e da saúde de quem amam.</p>
+        <h3 style="color:var(--brand);margin-bottom:20px">Quem Sou Eu pra Te Dizer Isso</h3>
+        <h4 style="margin:0 0 15px;font-size:1.3rem">Dra. Yallana Arruda</h4>
+        <p style="margin-bottom:15px;line-height:1.6">Me chamo <strong>Yallana Arruda</strong>. Sou médica há quase 10 anos, nutróloga formada pela USP, com pós-graduação em Medicina Integrativa. Mas o que me qualifica pra falar <strong>disso</strong> não é só o diploma — é que eu vivi isso na pele.</p>
+        <p style="margin-bottom:15px;line-height:1.6">Durante minha gravidez, eu — médica, nutróloga, "expert em saúde" — me vi completamente perdida. Cansada. Inchada. Sem energia. E pior: sem encontrar um profissional que olhasse pra <strong>mim</strong> como um TODO. Foi aí que entendi: se EU me sentia assim... imagina quem não tem acesso a isso?</p>
+        <p style="margin-bottom:15px;line-height:1.6">Desde então, já acompanhei <strong>mais de 300 mulheres</strong> a saírem do piloto automático e voltarem a se sentir VIVAS. O GSI é o método que eu uso em consultório particular (onde cobro R$ 500+ por sessão) — traduzido pra linguagem que qualquer mulher entende e aplica. Não é coach. Não é motivacional. É <strong>medicina integrativa baseada em evidência</strong> — aplicada de forma prática pra você resolver a CAUSA, não o sintoma.</p>
         
         <div style="background:#fff;padding:15px;border-radius:8px;border:1px solid var(--stroke);margin:15px 0">
-          <h5 style="margin:0 0 10px;color:var(--brand)">Formação Acadêmica</h5>
+          <h5 style="margin:0 0 10px;color:var(--brand)">Formação</h5>
           <ul style="margin:0;padding-left:20px;color:var(--ink)">
-            <li><strong>Residência em Nutrologia pela USP</strong></li>
-            <li><strong>Residência em Clínica Médica</strong></li>
+            <li><strong>Nutróloga formada pela USP</strong></li>
             <li><strong>Pós-graduação em Medicina Integrativa</strong></li>
           </ul>
-        </div>
-        
-        <div style="background:var(--soft);padding:20px;border-radius:12px;margin:20px 0">
-          <h5 style="margin:0 0 10px;color:var(--brand)">Por que criou o GSI?</h5>
-          <p style="margin:0;line-height:1.6">Apesar de toda a minha formação, eu mesma enfrentei dificuldades para encontrar um profissional que realmente olhasse para mim e para a minha família de forma integral. Isso ficou ainda mais evidente durante a minha gravidez, quando senti na pele o quanto é valioso ter uma abordagem completa e integrativa. Essa experiência me fez perceber o quanto podemos nos beneficiar de um cuidado que considere o ser humano como um todo.</p>
         </div>
         
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:20px 0">
@@ -1129,61 +1264,83 @@
           </div>
           <div style="text-align:center;padding:15px;background:#fff;border-radius:8px;border:1px solid var(--stroke)">
             <p style="margin:0;font-size:1.5rem;font-weight:700;color:var(--brand)">300+</p>
-            <p style="margin:0;font-size:0.9rem;color:var(--muted)">Pacientes auxiliados</p>
-          </div>
-          <div style="text-align:center;padding:15px;background:#fff;border-radius:8px;border:1px solid var(--stroke)">
-            <p style="margin:0;font-size:1.5rem;font-weight:700;color:var(--brand)">100%</p>
-            <p style="margin:0;font-size:0.9rem;color:var(--muted)">Abordagem integrativa</p>
+            <p style="margin:0;font-size:0.9rem;color:var(--muted)">Mulheres já acompanhadas</p>
           </div>
         </div>
-        
-        <p style="margin:0;font-style:italic;color:var(--muted);line-height:1.6">"Meu objetivo é empoderar pessoas para que sejam protagonistas da própria saúde, com conhecimento e autonomia para tomar as melhores decisões."</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== FAQ ===== -->
+  <!-- ===== PERGUNTAS QUE VOCÊ DEVE ESTAR SE FAZENDO ===== -->
   <section class="faq" id="faq" data-section="FAQ e Dúvidas" style="padding:60px 0;background:linear-gradient(135deg,#f8fafc,#f1f5f9)">
     <div class="container">
-      <h2 style="text-align:center;margin:0 0 3rem;color:var(--brand);font-size:2.5rem;font-weight:800">Dúvidas Frequentes</h2>
+      <h2 style="text-align:center;margin:0 0 3rem;color:var(--brand);font-size:2.5rem;font-weight:800">Perguntas Que Você Deve Estar Se Fazendo</h2>
       <div style="max-width:800px;margin:0 auto">
         <details open style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
-          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">💸 Não tenho dinheiro para investir</summary>
-          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Pense em quantas vezes você pagou consultas que não trouxeram soluções definitivas, ou quantos remédios já comprou que só tapavam o sol com a peneira. O GSI é um investimento que previne problemas futuros, economizando tempo, dinheiro e sofrimento lá na frente.</p>
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f3f4ef,#eef0ea);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#e8ebe4,#c5ccb8)'" onmouseout="this.style.background='linear-gradient(135deg,#f3f4ef,#eef0ea)'">⏰ Não tenho tempo, mal consigo dar conta das crianças/trabalho</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Por isso o GSI é 100% online. Você assiste quando puder — madrugada, intervalo do almoço, depois que as crianças dormem. As aulas são diretas, sem enrolação. Cada módulo tem ações práticas que você implementa NA MESMA SEMANA.</p>
         </details>
         
         <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
-          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">🧠 Não vou entender nada, não sou da área da saúde</summary>
-          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">O material é didático e criado para quem está começando do zero. São aulas objetivas, com checklists e materiais de apoio que mostram o que fazer, como fazer e por que fazer.</p>
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f3f4ef,#eef0ea);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#e8ebe4,#c5ccb8)'" onmouseout="this.style.background='linear-gradient(135deg,#f3f4ef,#eef0ea)'">🤔 Já tentei de tudo, por que o GSI seria diferente?</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Porque tudo que você tentou atacou o <strong>SINTOMA</strong>. Dieta? Ataca o peso, não a causa. Remédio? Mascara a dor, não resolve. O GSI ataca a <strong>RAIZ</strong>: hormônios, inflamação, sono, nutrição celular. É por isso que funciona quando o resto falhou.</p>
         </details>
         
         <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
-          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">⏰ Minha rotina é muito apertada, quase não tenho tempo</summary>
-          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Por isso mesmo o GSI foi pensado para ser flexível. As aulas são on-line, ficam gravadas, e você consegue aplicar pequenas mudanças no dia a dia, sem revoluções impossíveis de manter.</p>
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f3f4ef,#eef0ea);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#e8ebe4,#c5ccb8)'" onmouseout="this.style.background='linear-gradient(135deg,#f3f4ef,#eef0ea)'">👫 Meu marido vai achar desperdício de dinheiro</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Mostre pra ele quanto vocês gastam por mês tentando resolver o sintoma: consultas que não resolvem + remédios + cremes + suplementos aleatórios. Some. Provavelmente passa de R$ 147. O GSI é investimento UMA VEZ que resolve a causa.</p>
         </details>
         
         <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
-          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">👨‍⚕️ Então vou largar meu médico?</summary>
-          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">De jeito nenhum. Você ganha informação para dialogar melhor, inclusive para questionar se as condutas dele(a) realmente fazem sentido e estão atualizadas. É sobre você deixar de ser um paciente passivo e se tornar alguém que participa das decisões sobre o próprio corpo.</p>
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f3f4ef,#eef0ea);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#e8ebe4,#c5ccb8)'" onmouseout="this.style.background='linear-gradient(135deg,#f3f4ef,#eef0ea)'">📱 Não sou boa com tecnologia, vai ser complicado?</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">É só apertar play. Simples como Netflix. Se você consegue usar WhatsApp, consegue fazer o GSI.</p>
         </details>
         
         <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
-          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">🛡️ E se eu não gostar do curso?</summary>
-          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem"><strong>Garantia incondicional de 7 dias!</strong> Se por qualquer motivo você não ficar satisfeito(a) com o GSI, devolvemos 100% do seu dinheiro, sem perguntas. É nossa forma de garantir que você tenha total confiança no investimento.</p>
-        </details>
-        
-        <details style="background:#fff;border-radius:16px;margin-bottom:20px;box-shadow:0 8px 25px rgba(0,0,0,0.1);overflow:hidden;border:2px solid #e5e7eb">
-          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f0fdf4,#ecfdf5);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#dcfce7,#bbf7d0)'" onmouseout="this.style.background='linear-gradient(135deg,#f0fdf4,#ecfdf5)'">📱 Como funciona o acesso ao conteúdo?</summary>
-          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem">Você recebe acesso imediato a uma plataforma exclusiva onde pode assistir às aulas, baixar os materiais e acessar os bônus. O conteúdo fica disponível para sempre, sem mensalidades ou taxas adicionais.</p>
+          <summary style="padding:25px;font-size:1.2rem;font-weight:700;color:var(--brand);cursor:pointer;background:linear-gradient(135deg,#f3f4ef,#eef0ea);border-bottom:1px solid #e5e7eb;transition:all 0.3s ease" onmouseover="this.style.background='linear-gradient(135deg,#e8ebe4,#c5ccb8)'" onmouseout="this.style.background='linear-gradient(135deg,#f3f4ef,#eef0ea)'">🛡️ E se eu não gostar?</summary>
+          <p style="padding:25px;margin:0;line-height:1.7;color:var(--ink);font-size:1.1rem"><strong>7 dias de garantia.</strong> Você tem 7 dias pra avaliar com calma. Se não fizer sentido pra você, a devolução é integral.</p>
         </details>
       </div>
     </div>
   </section>
 
+  <!-- ===== SUA ESCOLHA (3 CAMINHOS) ===== -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2 style="text-align:center;margin:0 0 2rem;color:var(--ink);font-size:2.2rem;font-weight:900">Sua Escolha</h2>
+      <p style="text-align:center;max-width:700px;margin:0 auto 2rem;font-size:1.15rem;color:var(--muted);line-height:1.6">Só existem <strong>3 caminhos</strong> a partir daqui:</p>
+      <div style="max-width:900px;margin:0 auto">
+        <div class="card" style="margin-bottom:20px;padding:25px;border-left:4px solid var(--muted)">
+          <h4 style="margin:0 0 10px;color:var(--muted);font-size:1.15rem">CAMINHO 1: A REPETIÇÃO</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">Você fecha essa página. Volta pro Instagram. Daqui 6 meses, nada mudou — cansada, inchada, sem libido, refém da TPM. E o tempo passa. Até que um dia você acorda com 45 e pensa: "Por que eu não cuidei disso quando ainda tinha tempo?"</p>
+        </div>
+        <div class="card" style="margin-bottom:20px;padding:25px;border-left:4px solid #f97316">
+          <h4 style="margin:0 0 10px;color:#f97316;font-size:1.15rem">CAMINHO 2: CONTINUAR TENTANDO SOZINHA</h4>
+          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">Você segue testando dietas, comprando suplemento que influencer indicou. Gasta R$ 200 aqui, R$ 300 ali. Daqui 1 ano você gastou R$ 2.000+ e continua no mesmo lugar. Porque informação sem estrutura é só ruído.</p>
+        </div>
+        <div class="card card--benefit" style="padding:25px;border-left:4px solid var(--brand)">
+          <h4 style="margin:0 0 10px;color:var(--brand);font-size:1.15rem">CAMINHO 3: PEGAR O MAPA E APLICAR</h4>
+          <p style="margin:0 0 15px;font-size:1rem;line-height:1.6;color:var(--ink)">Você investe R$ 147 AGORA. Acessa o GSI HOJE. Em 6 semanas de protocolo: acorda descansada, desincha de verdade, TPM mais leve, libido volta, se olha no espelho e pensa: "EU TÔ BONITA". E daqui 6 meses, quando alguém perguntar o que você fez, você vai dizer: "Eu parei de tentar resolver sintoma. E corrigi a causa."</p>
+          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="if(typeof fbq!=='undefined'){fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});}">👉 QUERO ME SENTIR VIVA DE NOVO</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="background:var(--soft);padding:40px 0">
+    <div class="container" style="text-align:center;max-width:700px">
+      <p style="font-size:1.1rem;line-height:1.7;color:var(--ink);margin:0 0 20px"><strong>P.S.</strong> Eu sei que você já tentou de tudo. Dietas, exercícios, suplementos. Mas o problema não é você — é que você nunca teve acesso à informação <strong>CERTA</strong>. O GSI não é mais um método milagroso. É você finalmente entendendo como seu corpo funciona e fazendo ele trabalhar a seu favor. E quando você fizer isso? Você vai olhar no espelho daqui 3 meses e pensar: "Como eu deixei passar tanto tempo me sentindo assim?" Não deixa mais um ano passar. Começa hoje.</p>
+      <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="if(typeof fbq!=='undefined'){fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});}" style="font-size:1.15rem;padding:18px 36px">👉 QUERO ME SENTIR VIVA DE NOVO</a>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 Guia da Saúde Integrada — Todos os direitos reservados.</p>
+      <p style="margin:0 0 8px;font-weight:600;color:var(--ink)">Dra. Yallana Arruda Moreira</p>
+      <p style="margin:0;font-size:0.95rem;color:var(--muted)">Médica Nutróloga | Residência USP | Pós-graduação em Medicina Integrativa<br>+300 mulheres já foram acompanhadas</p>
+      <p style="margin:0.5rem 0 0;font-size:0.95rem;color:var(--ink)">Conteúdo educativo. Não substitui consulta médica.</p>
+      <p style="margin:1.5rem 0 0;font-size:0.9rem;color:var(--muted)">&copy; 2026 Guia da Saúde Integrada — Todos os direitos reservados.</p>
     </div>
   </footer>
   <script>
@@ -1335,13 +1492,13 @@
         indicator.classList.toggle('active', index === currentSlide[carouselId]);
       });
       
-      // Update navigation buttons
-      const prevBtn = document.querySelector(`#${carouselId} .prev`);
-      const nextBtn = document.querySelector(`#${carouselId} .next`);
-      const maxSlide = slides.length - Math.ceil(track.parentElement.offsetWidth / slideWidth);
+      // Update navigation buttons (protegido: bônus e outros podem não ter botões)
+      const prevBtn = document.querySelector(`#${carouselId} .carousel-nav.prev`);
+      const nextBtn = document.querySelector(`#${carouselId} .carousel-nav.next`);
+      const maxSlide = Math.max(0, slides.length - Math.ceil(track.parentElement.offsetWidth / slideWidth));
       
-      prevBtn.style.opacity = currentSlide[carouselId] === 0 ? '0.5' : '1';
-      nextBtn.style.opacity = currentSlide[carouselId] >= maxSlide ? '0.5' : '1';
+      if (prevBtn) prevBtn.style.opacity = currentSlide[carouselId] === 0 ? '0.5' : '1';
+      if (nextBtn) nextBtn.style.opacity = currentSlide[carouselId] >= maxSlide ? '0.5' : '1';
     }
 
     // Touch/swipe support for mobile
@@ -1379,20 +1536,6 @@
       startY = 0;
     });
 
-    // Keyboard support
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'ArrowLeft') {
-        const activeCarousel = document.querySelector('.carousel');
-        if (activeCarousel) {
-          moveSlide(activeCarousel.id, -1);
-        }
-      } else if (e.key === 'ArrowRight') {
-        const activeCarousel = document.querySelector('.carousel');
-        if (activeCarousel) {
-          moveSlide(activeCarousel.id, 1);
-        }
-      }
-    });
   </script>
 </body>
 </html>
