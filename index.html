@@ -598,8 +598,8 @@
     .track {
       display: flex;
       gap: 20px;
-      transition: transform 0.5s ease;
       overflow-x: auto;
+      scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       scrollbar-width: none;
       -ms-overflow-style: none;
@@ -611,11 +611,13 @@
 
     .slide {
       flex: 0 0 280px;
+      min-width: 280px;
+      scroll-snap-align: start;
       background: white;
       border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 10px 30px rgba(112, 130, 56, 0.12);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease;
       position: relative;
     }
 
@@ -1415,13 +1417,27 @@
       // Marcar tempo de carregamento da página
       window.pageLoadTime = Date.now();
       
-      // Initialize each carousel
+      // Initialize each carousel (after a tick so layout is ready)
       const carousels = document.querySelectorAll('.carousel');
-      carousels.forEach(carousel => {
-        const id = carousel.id;
-        currentSlide[id] = 0;
-        updateCarousel(id);
-      });
+      function initCarousels() {
+        carousels.forEach(carousel => {
+          const id = carousel.id;
+          currentSlide[id] = 0;
+          const track = document.getElementById(`track-${id}`);
+          if (track) {
+            track.scrollLeft = 0;
+            track.addEventListener('scroll', function() {
+              const step = getSlideStep(track);
+              if (step <= 0) return;
+              const index = Math.round(track.scrollLeft / step);
+              currentSlide[id] = Math.min(index, track.querySelectorAll('.slide').length - 1);
+              updateCarouselUI(id);
+            });
+          }
+          updateCarousel(id);
+        });
+      }
+      initCarousels();
 
       // Configurar observer para seções
       const sections = document.querySelectorAll('[data-section]');
@@ -1447,21 +1463,28 @@
       });
     });
 
+    function getSlideStep(track) {
+      const slides = track.querySelectorAll('.slide');
+      if (!slides.length) return 300;
+      const gap = 20;
+      const firstWidth = slides[0].getBoundingClientRect().width;
+      return (firstWidth > 0 ? firstWidth : 280) + gap;
+    }
+
     function moveSlide(carouselId, direction) {
       const track = document.getElementById(`track-${carouselId}`);
+      if (!track) return;
       const slides = track.querySelectorAll('.slide');
-      const slideWidth = slides[0].offsetWidth + 20; // 20px gap
-      const maxSlide = slides.length - Math.ceil(track.parentElement.offsetWidth / slideWidth);
+      const step = getSlideStep(track);
+      const viewportWidth = track.parentElement.offsetWidth;
+      const maxSlide = Math.max(0, slides.length - Math.ceil(viewportWidth / step));
       
       currentSlide[carouselId] += direction;
+      if (currentSlide[carouselId] < 0) currentSlide[carouselId] = 0;
+      if (currentSlide[carouselId] > maxSlide) currentSlide[carouselId] = maxSlide;
       
-      if (currentSlide[carouselId] < 0) {
-        currentSlide[carouselId] = 0;
-      } else if (currentSlide[carouselId] > maxSlide) {
-        currentSlide[carouselId] = maxSlide;
-      }
+      track.scrollLeft = currentSlide[carouselId] * step;
       
-      // Rastrear interação com carrossel
       if (typeof fbq !== 'undefined') {
         fbq('track', 'CustomizeProduct', {
           content_name: `Carrossel ${carouselId} - Navegação`,
@@ -1470,35 +1493,43 @@
         });
       }
       
-      updateCarousel(carouselId);
+      updateCarouselUI(carouselId);
     }
 
     function goToSlide(carouselId, slideIndex) {
-      currentSlide[carouselId] = slideIndex;
-      updateCarousel(carouselId);
+      const track = document.getElementById(`track-${carouselId}`);
+      if (!track) return;
+      const step = getSlideStep(track);
+      currentSlide[carouselId] = Math.max(0, Math.min(slideIndex, track.querySelectorAll('.slide').length - 1));
+      track.scrollLeft = currentSlide[carouselId] * step;
+      updateCarouselUI(carouselId);
     }
 
     function updateCarousel(carouselId) {
       const track = document.getElementById(`track-${carouselId}`);
+      if (!track) return;
+      track.scrollLeft = (currentSlide[carouselId] || 0) * getSlideStep(track);
+      updateCarouselUI(carouselId);
+    }
+
+    function updateCarouselUI(carouselId) {
+      const track = document.getElementById(`track-${carouselId}`);
+      if (!track) return;
       const slides = track.querySelectorAll('.slide');
-      const slideWidth = slides[0].offsetWidth + 20; // 20px gap
-      const translateX = -currentSlide[carouselId] * slideWidth;
+      const step = getSlideStep(track);
+      const viewportWidth = track.parentElement.offsetWidth;
+      const maxSlide = Math.max(0, slides.length - Math.ceil(viewportWidth / step));
+      const current = currentSlide[carouselId] || 0;
       
-      track.style.transform = `translateX(${translateX}px)`;
-      
-      // Update indicators
       const indicators = document.querySelectorAll(`#indicators-${carouselId} .indicator`);
       indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('active', index === currentSlide[carouselId]);
+        indicator.classList.toggle('active', index === current);
       });
       
-      // Update navigation buttons (protegido: bônus e outros podem não ter botões)
       const prevBtn = document.querySelector(`#${carouselId} .carousel-nav.prev`);
       const nextBtn = document.querySelector(`#${carouselId} .carousel-nav.next`);
-      const maxSlide = Math.max(0, slides.length - Math.ceil(track.parentElement.offsetWidth / slideWidth));
-      
-      if (prevBtn) prevBtn.style.opacity = currentSlide[carouselId] === 0 ? '0.5' : '1';
-      if (nextBtn) nextBtn.style.opacity = currentSlide[carouselId] >= maxSlide ? '0.5' : '1';
+      if (prevBtn) prevBtn.style.opacity = current === 0 ? '0.5' : '1';
+      if (nextBtn) nextBtn.style.opacity = current >= maxSlide ? '0.5' : '1';
     }
 
     // Touch/swipe support for mobile
