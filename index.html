@@ -392,10 +392,7 @@
       50% { transform: scale(1.05); }
     }
 
-    @keyframes shimmer {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
+
 
     @keyframes move {
       0% { background-position: 0 0; }
@@ -852,9 +849,8 @@
         </div>
         
         <div class="hero__actions" style="position:relative">
-          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="if(typeof fbq!=='undefined'){fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});}" style="position:relative;overflow:hidden;font-size:1.15rem;padding:18px 40px;box-shadow:0 12px 35px rgba(112,130,56,0.4);transform:scale(1.02)">
+          <a class="btn" href="https://pay.kiwify.com.br/e2JyPl4" onclick="if(typeof fbq!=='undefined'){fbq('track', 'InitiateCheckout', {content_name: 'GSI - Guia da Saúde Integrada', content_category: 'Saúde Integrativa', value: 147, currency: 'BRL'});}" style="position:relative;overflow:hidden;font-size:1.15rem;padding:18px 40px;box-shadow:0 12px 35px rgba(112,130,56,0.4)">
             <span style="position:relative;z-index:2">QUERO ME SENTIR VIVA DE NOVO</span>
-            <div style="position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);animation:shimmer 3s infinite"></div>
           </a>
           <a class="btn btn--ghost" href="#checkout" onclick="if(typeof fbq!=='undefined'){fbq('track', 'ViewContent', {content_name: 'Oferta GSI', content_category: 'Saúde Integrativa'});}" style="font-size:1.05rem;padding:16px 32px;border:2px solid var(--brand);position:relative;overflow:hidden">
             <span style="position:relative;z-index:2">Ver o que está incluído</span>
@@ -1138,22 +1134,7 @@
     </div>
   </section>
 
-  <!-- ===== ANTES E DEPOIS ===== -->
-  <section class="section section--soft">
-    <div class="container">
-      <h2 style="text-align:center;margin:0 0 2rem;color:var(--brand);font-size:2rem;font-weight:900">Antes e Depois</h2>
-      <div class="grid grid--2" style="gap:25px;max-width:900px;margin:0 auto">
-        <div class="card card--problem" style="padding:25px">
-          <h3 style="margin:0 0 15px;color:var(--accent);font-size:1.2rem">Antes do GSI</h3>
-          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">❌ Acorda cansada, passa o dia no automático<br>❌ Olha no espelho e não se reconhece<br>❌ TPM te domina (irritação, inchaço, compulsão)<br>❌ Intimidade virou obrigação — você só quer "cumprir tabela"<br>❌ Guarda a roupa bonita "pra quando emagrecer"<br>❌ Se sente invisível, apagada, velha (mesmo estando na casa dos 30)</p>
-        </div>
-        <div class="card card--benefit" style="padding:25px">
-          <h3 style="margin:0 0 15px;color:var(--brand);font-size:1.2rem">Depois do GSI</h3>
-          <p style="margin:0;font-size:1rem;line-height:1.6;color:var(--ink)">✅ Acorda descansada, com disposição real<br>✅ Se olha no espelho e pensa: "Eu tô bem"<br>✅ TPM existe mas não te derruba<br>✅ Libido volta — você QUER, não só aceita<br>✅ Usa a roupa bonita e se sente LINDA<br>✅ É vista de novo — porque você voltou a brilhar</p>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ===== SLIDER: MÓDULOS ===== -->
   <section class="carousel" id="modulos">
@@ -1271,7 +1252,6 @@
             </div>
             <div class="price" style="color:var(--accent);font-size:4rem;font-weight:900;margin:0;text-shadow:0 4px 8px rgba(152,66,22,0.2);position:relative">
               R$ 147
-              <div style="position:absolute;top:-10px;right:-20px;background:var(--accent);color:#fff;padding:4px 8px;border-radius:12px;font-size:0.7rem;font-weight:800;transform:rotate(15deg)">-70%</div>
             </div>
           </div>
           <p style="margin:0;color:var(--muted);font-size:1.2rem;font-weight:600">em até 12x de <strong style="color:var(--brand)">R$ 12,25</strong> • 1 ano de acesso</p>
